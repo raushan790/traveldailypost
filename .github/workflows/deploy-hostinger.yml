@@ -46,3 +46,5 @@ jobs:
             **/.git*
             **/.git*/**
             **/node_modules/**
+            # R2-hosted images — no longer shipped with the static site
+            **/public/images/articles/**

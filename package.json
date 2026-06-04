@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.24.1",
-    "dompurify": "^3.3.3",    
+    "@aws-sdk/client-s3": "^3.1048.0",
+    "dompurify": "^3.3.3",
     "fast-xml-parser": "^4.4.0",
     "gray-matter": "^4.0.3",
     "marked": "^17.0.4",

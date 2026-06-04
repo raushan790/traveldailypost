@@ -21,6 +21,7 @@ import { XMLParser } from 'fast-xml-parser'
 import Anthropic from '@anthropic-ai/sdk'
 import OpenAI from 'openai'
 import sharp from 'sharp'
+import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3'
 
 // Load .env.local if it exists (for local development)
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -67,6 +68,21 @@ function createClaudeClient() {
   const apiKey = process.env.ANTHROPIC_API_KEY
   if (!apiKey) throw new Error('ANTHROPIC_API_KEY is not set')
   return new Anthropic({ apiKey })
+}
+
+// ─── Cloudflare R2 Client ─────────────────────────────────────────────────────
+function createR2Client() {
+  const accountId = process.env.R2_ACCOUNT_ID
+  const accessKeyId = process.env.R2_ACCESS_KEY_ID
+  const secretAccessKey = process.env.R2_SECRET_ACCESS_KEY
+  if (!accountId || !accessKeyId || !secretAccessKey) {
+    throw new Error('R2_ACCOUNT_ID, R2_ACCESS_KEY_ID, and R2_SECRET_ACCESS_KEY must be set')
+  }
+  return new S3Client({
+    region: 'auto',
+    endpoint: `https://${accountId}.r2.cloudflarestorage.com`,
+    credentials: { accessKeyId, secretAccessKey },
+  })
 }
 
 function createOpenAIClient() {
@@ -801,11 +817,17 @@ async function generateArticle(item, claudeClient, category) {
   }
 }
 
-// ─── Image Generation (gpt-image-1-mini) ───────────────────────────────────────────────
+// ─── Image Generation + R2 Upload (gpt-image-1-mini → Cloudflare R2) ───────────
+const R2_BUCKET = process.env.R2_BUCKET_NAME || 'traveldailypost-images'
+const R2_PUBLIC_URL = (process.env.R2_PUBLIC_URL || 'https://images.traveldailypost.com').replace(/\/$/, '')
+
 async function generateCoverImage(title, excerpt, slug, category, year, month, openaiClient) {
+  const r2Key = `articles/${category}/${year}/${month}/${slug}.jpg`
+  const publicUrl = `${R2_PUBLIC_URL}/${r2Key}`
+
   if (DRY_RUN) {
     console.log(`   [DRY_RUN] Would generate image for: ${title.slice(0, 50)}`)
-    return `/images/articles/${category}/${year}/${month}/${slug}.jpg`
+    return publicUrl
   }
 
   const imagePrompt = `Professional editorial travel photograph for article: "${title.slice(0, 120)}". ${excerpt ? excerpt.slice(0, 150) : ''} Photorealistic, cinematic lighting, journalistic style, wide 16:9 composition, no text overlays, no watermarks, no logos.`
@@ -823,23 +845,29 @@ async function generateCoverImage(title, excerpt, slug, category, year, month, o
     const b64 = response.data[0]?.b64_json
     if (!b64) throw new Error('gpt-image-1-mini returned no image data')
 
-    const imgDir = path.join(IMAGES_DIR, category, String(year), month)
-    fs.mkdirSync(imgDir, { recursive: true })
-    const imgPath = path.join(imgDir, `${slug}.jpg`)
-
+    // Resize to 1200×700 JPEG
     const pngBuffer = Buffer.from(b64, 'base64')
-    const resized = await sharp(pngBuffer)
+    const jpegBuffer = await sharp(pngBuffer)
       .resize(1200, 700, { fit: 'cover', position: 'centre' })
       .jpeg({ quality: 88 })
       .toBuffer()
-    fs.writeFileSync(imgPath, resized)
 
-    console.log(`   🖼️  Saved (1200×700): public/images/articles/${category}/${year}/${month}/${slug}.jpg`)
-    return `/images/articles/${category}/${year}/${month}/${slug}.jpg`
+    // Upload to Cloudflare R2
+    const r2 = createR2Client()
+    await r2.send(new PutObjectCommand({
+      Bucket: R2_BUCKET,
+      Key: r2Key,
+      Body: jpegBuffer,
+      ContentType: 'image/jpeg',
+      CacheControl: 'public, max-age=31536000, immutable',
+    }))
+
+    console.log(`   🖼️  Uploaded (1200×700) → ${publicUrl}`)
+    return publicUrl
 
   } catch (err) {
-    console.error(`   ⚠️  Image generation failed: ${err.message}. Using placeholder path.`)
-    return `/images/articles/${category}/${year}/${month}/${slug}.jpg`
+    console.error(`   ⚠️  Image generation/upload failed: ${err.message}. Using CDN placeholder URL.`)
+    return publicUrl
   }
 }
 
