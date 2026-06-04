@@ -12,11 +12,12 @@ const PENDING_IMAGES_FILE = '/Users/raushankumar/.gemini/antigravity-ide/brain/4
 
 // Array of generated PNG file paths from Antigravity tool
 const GENERATED_PNGS = [
-  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/vietnam_hidden_gems_1780592462964.png',
-  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/vietnam_nomad_cafe_1780592485421.png',
-  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/spacex_ipo_launch_1780592504892.png',
-  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/new_zealand_coolcation_1780592524127.png',
-  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/richmond_mansion_heritage_1780592544895.png'
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/uk_thunderstorm_asthma_1780593985601.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/finnair_helsinki_airport_1780594033259.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/copenhagen_airport_delays_1780594086090.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/wildfire_alert_mountains_1780594139431.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/middle_east_airport_strike_1780594203073.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/latam_bogota_airport_1780594265009.png'
 ];
 
 // ── Load Env ─────────────────────────────────────────────────────────────────

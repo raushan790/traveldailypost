@@ -21,12 +21,11 @@ export const metadata: Metadata = {
   creator: 'Travel Daily Post',
   publisher: 'Travel Daily Post',
   robots: {
-    // 🚧 Development mode — block all indexing
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
     googleBot: {
-      index: false,
-      follow: false,
+      index: true,
+      follow: true,
     },
   },
   openGraph: {
@@ -72,10 +71,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <head>
         <link rel="preconnect" href="https://images.unsplash.com" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/0/font-awesome/6.5.1/css/all.min.css" />
         <meta name="theme-color" content="#CC0000" />
-        {/* 🚧 Development: googlebot-news indexing disabled */}
-        <meta name="googlebot-news" content="noindex" />
         <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1044498378918575"
