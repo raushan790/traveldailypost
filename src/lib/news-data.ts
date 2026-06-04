@@ -62,7 +62,7 @@ function loadArticlesFromFiles(): Article[] {
 }
 
 // Load articles from markdown files at runtime
-export const articles: Article[] = loadArticlesFromFiles()
+const articles: Article[] = loadArticlesFromFiles()
 
 export * from './constants'
 
@@ -87,4 +87,21 @@ export function getRelatedArticles(article: Article, count: number = 3): Article
   return articles
     .filter(a => a.id !== article.id && a.category === article.category)
     .slice(0, count)
+}
+
+export function getArticlesByRegion(region: string, regionalMap: Record<string, string[]>): Article[] {
+  const keywords = regionalMap[region] || [];
+  return articles
+    .filter((a) =>
+      keywords.some(
+        (kw) =>
+          a.title.toLowerCase().includes(kw) ||
+          a.excerpt.toLowerCase().includes(kw)
+      )
+    )
+    .slice(0, 3);
+}
+
+export function getAllArticles(): Article[] {
+  return articles
 }

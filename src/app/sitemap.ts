@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { articles, categories } from '@/lib/news-data';
+import { getAllArticles, categories } from '@/lib/news-data';
 
 export const dynamic = 'force-static';
 
@@ -27,6 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   // Article pages
+  const articles = getAllArticles();
   const articlePages = articles.map((article) => ({
     url: `${baseUrl}/${article.slug}`,
     lastModified: new Date(article.date),

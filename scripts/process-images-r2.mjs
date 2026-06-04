@@ -12,12 +12,14 @@ const PENDING_IMAGES_FILE = '/Users/raushankumar/.gemini/antigravity-ide/brain/4
 
 // Array of generated PNG file paths from Antigravity tool
 const GENERATED_PNGS = [
-  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/uk_thunderstorm_asthma_1780593985601.png',
-  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/finnair_helsinki_airport_1780594033259.png',
-  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/copenhagen_airport_delays_1780594086090.png',
-  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/wildfire_alert_mountains_1780594139431.png',
-  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/middle_east_airport_strike_1780594203073.png',
-  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/latam_bogota_airport_1780594265009.png'
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/oman_air_seeb_airport_1780602226817.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/oslo_airport_cancellations_1780602240073.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/middle_east_flight_crisis_1780602251952.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/bogota_airport_chaos_1780602289193.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/mexico_airport_meltdown_1780602303220.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/skywest_uturn_flight_1780602315922.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/malpensa_airport_delays_1780602367536.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/world_cup_liveries_1780602381220.png'
 ];
 
 // ── Load Env ─────────────────────────────────────────────────────────────────

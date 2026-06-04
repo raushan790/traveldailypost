@@ -1,9 +1,9 @@
 import { Metadata } from 'next';
 import {
-  articles,
   getArticlesByCategory,
   getFeaturedArticle,
   getLatestArticles,
+  getArticlesByRegion,
 } from '@/lib/news-data';
 import HeroSection from '@/components/HeroSection';
 import LatestNewsTicker from '@/components/LatestNewsTicker';
@@ -33,18 +33,6 @@ const regionalMap: Record<string, string[]> = {
   Africa: ['africa', 'egypt', 'morocco', 'kenya', 'south africa', 'cape town', 'gambia'],
 };
 
-function getArticlesByRegion(region: string) {
-  const keywords = regionalMap[region] || [];
-  return articles
-    .filter((a) =>
-      keywords.some(
-        (kw) =>
-          a.title.toLowerCase().includes(kw) ||
-          a.excerpt.toLowerCase().includes(kw)
-      )
-    )
-    .slice(0, 3);
-}
 
 export default function HomePage() {
   const jsonLd = {
@@ -84,8 +72,8 @@ export default function HomePage() {
   };
 
   const featured = getFeaturedArticle();
-  const secondary = featured ? articles.filter((a) => a.id !== featured.id).slice(0, 2) : articles.slice(0, 2);
-  const travelNews = getArticlesByCategory('travel-news');
+  const secondary = featured ? getLatestArticles(3).filter((a) => a.id !== featured.id).slice(0, 2) : getLatestArticles(2);
+  const travelNews = getArticlesByCategory('travel-news').slice(0, 5);
   const tourismNews = getArticlesByCategory('tourism-news');
   const airlineNews = getArticlesByCategory('airline-news');
   const hotelNews = getArticlesByCategory('hotel-news');
@@ -94,13 +82,13 @@ export default function HomePage() {
   const travelDeals = [...getArticlesByCategory('travel-deals'), ...getArticlesByCategory('travel-alerts')];
   const travelTrends = [...getArticlesByCategory('travel-trends'), ...getArticlesByCategory('technology-news')];
   const latest = getLatestArticles(8);
-  const trending = featured ? articles.filter((a) => a.id !== featured.id).slice(0, 5) : articles.slice(0, 5);
+  const trending = getLatestArticles(10).filter((a) => featured ? a.id !== featured.id : true).slice(0, 5);
   const articlesByRegion = {
-    Europe: getArticlesByRegion('Europe'),
-    Americas: getArticlesByRegion('Americas'),
-    'Middle East': getArticlesByRegion('Middle East'),
-    Asia: getArticlesByRegion('Asia'),
-    Africa: getArticlesByRegion('Africa'),
+    Europe: getArticlesByRegion('Europe', regionalMap),
+    Americas: getArticlesByRegion('Americas', regionalMap),
+    'Middle East': getArticlesByRegion('Middle East', regionalMap),
+    Asia: getArticlesByRegion('Asia', regionalMap),
+    Africa: getArticlesByRegion('Africa', regionalMap),
   };
 
   return (
