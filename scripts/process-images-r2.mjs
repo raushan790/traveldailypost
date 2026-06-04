@@ -12,7 +12,11 @@ const PENDING_IMAGES_FILE = '/Users/raushankumar/.gemini/antigravity-ide/brain/4
 
 // Array of generated PNG file paths from Antigravity tool
 const GENERATED_PNGS = [
-  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/bali_visa_free_entry_1780590314623.png'
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/vietnam_hidden_gems_1780592462964.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/vietnam_nomad_cafe_1780592485421.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/spacex_ipo_launch_1780592504892.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/new_zealand_coolcation_1780592524127.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/richmond_mansion_heritage_1780592544895.png'
 ];
 
 // ── Load Env ─────────────────────────────────────────────────────────────────

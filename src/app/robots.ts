@@ -3,14 +3,14 @@ import { MetadataRoute } from 'next';
 export const dynamic = 'force-static';
 
 export default function robots(): MetadataRoute.Robots {
+  const baseUrl = 'https://traveldailypost.com';
   return {
     rules: [
       {
-        // 🚧 Site is under development — block ALL crawlers
         userAgent: '*',
-        disallow: '/',
+        allow: '/',
       },
     ],
-    // Sitemap hidden during development to prevent discovery
+    sitemap: `${baseUrl}/sitemap.xml`,
   };
 }
