@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "pipeline": "node scripts/chrome-tab-pipeline.mjs",
+    "images": "node scripts/process-images-r2.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.24.1",
