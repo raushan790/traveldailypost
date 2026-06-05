@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     creator: '@rinovative007',
   },
   verification: {
-    google: 'your-google-verification-code',
+    google: 'mOR_xNWPjIohSe9nt-FVxRDhrQm3EvYwer2MoY-RjJ0',
   },
   alternates: {
     canonical: 'https://traveldailypost.com',
