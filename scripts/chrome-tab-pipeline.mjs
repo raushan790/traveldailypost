@@ -277,6 +277,8 @@ BLOG TONE & STYLE RULES:
 - Embed 2-3 outbound links to authoritative sources naturally in the body
 - End with a short punchy italic sign-off line
 - **Viral Temperament & Layout**: Start with a high-impact dramatic hook or a brief first-person story-style opening. Structure sections with intriguing, click-worthy subheadings. Maintain a temperament of strong conviction, urgency, or awe to encourage social shares and long reader attention spans. Avoid passive, dry, corporate-style reporting.
+- **Data Tables & Key Facts**: If the source article contains structured data, statistics, flight/rail schedules, routes, cancellations, speed, capacity, or key numbers, you MUST organize and present these key facts in a clear, clean Markdown table under an appropriate ## subheading (e.g. "## Key Figures and Route Data" or "## Service Disruption At a Glance") to make the data easily digestible for the reader.
+
 
 
 OUTPUT FORMAT — output ONLY valid markdown with YAML frontmatter. Start directly with ---
