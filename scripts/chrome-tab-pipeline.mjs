@@ -54,15 +54,14 @@ const SKIP_URL_PATTERNS = [
   'perplexity.ai', 'genspark.ai', 'chatgpt.com',
   'antigravity.google', 'teamviewer.com', 'hauspire.com', 'labs.google',
   'microsoft.com', 'linkpublishers.com', 'paypal.com', 'lmstudio.ai',
+  'traveldailypost.com', 'together.ai', 'openart.ai'
 ];
 
 // Valid blog categories
 const VALID_CATEGORIES = [
-  'airline-news', 'travel-news', 'tourism-news', 'hotel-news',
-  'cruise-news', 'railway-news', 'destination-news', 'travel-alert',
-  'travel-deals', 'travel-trends', 'travel-technology-news',
-  'travel-event-news', 'travel-association-news',
-  'meeting-and-event-industry-news', 'law-facts', 'travel-tips',
+  'travel-news', 'tourism-news', 'airline-news', 'railway-news',
+  'cruise-news', 'destination-news', 'hotel-news', 'travel-alerts',
+  'travel-deals', 'travel-trends', 'technology-news'
 ];
 
 // ── Load env ─────────────────────────────────────────────────────────────────
@@ -236,11 +235,11 @@ function extractSourceCategory(rawText) {
       .replace(/-+/g, '-')
       .trim();
     
-    if (slug === 'mice') return 'meeting-and-event-industry-news';
-    if (slug === 'association-news') return 'travel-association-news';
-    if (slug === 'event-news') return 'travel-event-news';
+    if (slug === 'mice') return 'travel-news';
+    if (slug === 'association-news') return 'travel-news';
+    if (slug === 'event-news') return 'travel-news';
     if (slug === 'destinations') return 'destination-news';
-    if (slug === 'technology-news') return 'travel-technology-news';
+    if (slug === 'technology-news') return 'technology-news';
 
     // Map regional and subcategories to the primary valid categories
     if (slug.includes('airline')) return 'airline-news';
@@ -249,10 +248,10 @@ function extractSourceCategory(rawText) {
     if (slug.includes('railway') || slug.includes('train')) return 'railway-news';
     if (slug.includes('tourism')) return 'tourism-news';
     if (slug.includes('travel-news')) return 'travel-news';
-    if (slug.includes('travel-tips')) return 'travel-tips';
+    if (slug.includes('travel-tips')) return 'travel-news';
     if (slug.includes('travel-deals')) return 'travel-deals';
     if (slug.includes('travel-trends')) return 'travel-trends';
-    if (slug.includes('travel-alert')) return 'travel-alert';
+    if (slug.includes('travel-alert')) return 'travel-alerts';
     if (slug.includes('destination')) return 'destination-news';
 
     return slug;
@@ -261,8 +260,8 @@ function extractSourceCategory(rawText) {
 }
 
 // ── Step 5: Rewrite article with Claude ──────────────────────────────────────
-async function rewriteWithClaude(rawText, url, articleId, relatedLinks, suggestedCategory = null, suggestedAuthor = 'Kunal K Choudhary') {
-  const systemPrompt = `You are a senior travel and law journalist writing for nomadlawyer.org — a blog covering travel news, law facts, airline updates, and destination guides.
+async function rewriteWithClaude(rawText, url, articleId, relatedLinks, suggestedCategory = null, suggestedAuthor = 'Preeti Gunjan') {
+  const systemPrompt = `You are a senior travel journalist writing for traveldailypost.com — a blog covering travel news, airline updates, destination guides, hotel reviews, and cruise news.
 ${suggestedCategory ? `- You MUST set the category in the frontmatter to EXACTLY "${suggestedCategory}".` : ''}
 
 Your task: Rewrite the provided article into a 100% original, highly engaging, and viral SEO-optimized blog post in the same TONE, STYLE, and LAYOUT as the blog. Focus on strong narrative hooks, dramatic journalistic formatting, and a compelling temperament that encourages shares and reader retention.
@@ -270,7 +269,6 @@ Your task: Rewrite the provided article into a 100% original, highly engaging, a
 BLOG TONE & STYLE RULES:
 - Write in first-person observer tone where appropriate ("I visited", "what I found")
 - For news articles: confident, factual, journalistic, no fluff
-- For law/legal articles: clear, informative, professional but accessible
 - Short, punchy paragraphs (2-4 sentences max)
 - Bold important entities, statistics, proper nouns on first mention
 - Use ## headings for each major section (no H1 in body)
@@ -312,7 +310,7 @@ ${relatedLinks}
 **Disclaimer:** [Topic-appropriate disclaimer]
 
 CATEGORY MUST BE EXACTLY ONE OF:
-airline-news | travel-news | tourism-news | hotel-news | cruise-news | railway-news | destination-news | travel-alert | travel-deals | travel-trends | travel-technology-news | travel-event-news | travel-association-news | meeting-and-event-industry-news | law-facts | travel-tips
+travel-news | tourism-news | airline-news | railway-news | cruise-news | destination-news | hotel-news | travel-alerts | travel-deals | travel-trends | technology-news
 
 PROHIBITIONS:
 - No H1 heading in body
@@ -333,7 +331,7 @@ PROHIBITIONS:
         system: systemPrompt,
         messages: [{
           role: 'user',
-          content: `Rewrite this article for nomadlawyer.org:\n\nSource URL: ${url}\n\nContent:\n${rawText.slice(0, 9000)}`,
+          content: `Rewrite this article for traveldailypost.com:\n\nSource URL: ${url}\n\nContent:\n${rawText.slice(0, 9000)}`,
         }],
       });
 
@@ -393,7 +391,7 @@ function saveArticle(md, articleId, forcedCategory = null, forcedAuthor = null) 
   // Fix coverImage placeholder path
   md = md.replace(
     /coverImage:\s*""/,
-    `coverImage: "https://images.nomadlawyer.org/images/blog/${category}/${YEAR}/${MONTH}/${slug}.jpg"`
+    `coverImage: "https://images.traveldailypost.com/articles/${category}/${YEAR}/${MONTH}/${slug}.jpg"`
   );
 
   // Ensure ID is correct
@@ -415,10 +413,17 @@ function saveArticle(md, articleId, forcedCategory = null, forcedAuthor = null) 
   return { filePath, slug, category, title };
 }
 
-// ── Step 7: Generate cover image (Placeholder for Agent processing) ───────────
+// ── Step 7: Generate cover image ─────────────────────────────────────────────
 function generateImage(filePath) {
-  // Image generation prompt is written to json and handled via Antigravity's generator
-  console.log(`   🎨 Image prompt queued for Antigravity generator`);
+  try {
+    execSync(`node scripts/generate-cover-image-fast.mjs "${filePath}"`, {
+      stdio: 'inherit',
+      cwd: ROOT,
+      timeout: 300000,
+    });
+  } catch (e) {
+    console.error(`   ⚠ Image generation failed: ${e.message}`);
+  }
 }
 
 // ── Main ─────────────────────────────────────────────────────────────────────
