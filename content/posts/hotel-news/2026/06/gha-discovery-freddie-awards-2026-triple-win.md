@@ -74,10 +74,9 @@ The 7.7 million votes weren't just supporting a programme. They were voting for 
 
 ## Related Travel Guides
 
-[Middle East Airspace Crisis: 8 Countries Close Skies, Stranding Thousands](/middle-east-airspace-crisis-8-countries-close-skies)
+[Portugal Strike June 2026: Travel Chaos Across Flights, Metro, Rail](/portugal-general-strike-june-2026-travel-chaos)
 
-[Airlines Race to Modernize Loyalty Programmes Amid Traveller Demand for Simplicity](/airline-loyalty-modernization-2026)
+[Russia Flight Chaos: UTair, Yakutia Ground 6 Flights](/russia-utair-yakutia-airlines-flight-cancellations-june-2026)
 
-[Luxury Travel Trends 2026: What Premium Travellers Actually Value](/luxury-travel-trends-2026)
-
-**Disclaimer:** Information about loyalty programme benefits, partner integrations, and award recognition is accurate as of June 2026. Programme terms, partner relationships, and benefits structure may change. Verify current benefits directly with GHA DISCOVERY before making loyalty programme decisions.
+[American Airlines Flight AA2465 Emergency Diversion: What Happened](/american-airlines-aa2465-emergency-diversion-los-angeles)
+:** Information about loyalty programme benefits, partner integrations, and award recognition is accurate as of June 2026. Programme terms, partner relationships, and benefits structure may change. Verify current benefits directly with GHA DISCOVERY before making loyalty programme decisions.

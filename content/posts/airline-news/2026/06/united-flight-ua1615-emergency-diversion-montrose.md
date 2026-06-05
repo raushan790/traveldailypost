@@ -86,10 +86,9 @@ United Airlines Flight UA1615 landed safely at Montrose. Passengers disembarked 
 
 ## Related Travel Guides
 
-[Emergency Flight Diversions Explained: Your Rights and Options](/flight-diversion-passenger-rights-guide)
+[Cyprus Mediterranean Rival: Beaches, Ruins & Mountain Escapes](/cyprus-mediterranean-escape-beaches-ruins-mountains)
 
-[Understanding Air Traffic Control and Flight Routing Decisions](/atc-flight-routing-decisions-explained)
+[GHA DISCOVERY Dominates 2026 Freddie Awards with Historic Triple Win](/gha-discovery-freddie-awards-2026-triple-win)
 
-[Boeing 737-900 Specifications: What You're Actually Flying On](/boeing-737-900-aircraft-specifications)
-
-**Disclaimer:** This article reports on a specific airline operational event. Always check with your airline for official statements regarding flight changes or diversions affecting your travel plans. Flight status information is subject to change.
+[LATAM Colombia Suspends 9 Flights at Bogotá's El Dorado](/latam-colombia-suspends-flights-el-dorado-airport-bogota)
+:** This article reports on a specific airline operational event. Always check with your airline for official statements regarding flight changes or diversions affecting your travel plans. Flight status information is subject to change.

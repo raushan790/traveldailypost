@@ -94,10 +94,9 @@ The rooftop doesn't just have a DJ anymore. It has strategic purpose.
 
 ## Related Travel Guides
 
-[Inside the Boutique Hotel Revolution: How Small Properties Are Beating Mega-Chains](/boutique-hotel-revolution-small-properties-beating-chains)
+[Alaska Airlines-Korean Air Codeshare: Seattle's Gateway to Asia Unlocked](/alaska-korean-air-codeshare-seattle-asia)
 
-[Wellness Tourism Boom 2026: Which Destinations Lead the Industry](/wellness-tourism-destinations-2026-growth)
+[Teterboro Airport Cancellations: 4 Tradewind Airlines Flights Grounded Today](/teterboro-airport-4-cancellations-tradewind-airlines-nantucket)
 
-[How Digital Nomads Are Reshaping Urban Hotel Markets](/digital-nomads-reshaping-urban-hotel-markets)
-
-**Disclaimer:** This article covers hospitality industry developments and event announcements as of June 2026. Event dates and details are subject to change. Travelers should visit official JdV by Hyatt property websites or contact venues directly for current event information, RSVP requirements, and any venue-specific regulations. Partnership details reflect public statements from brand leadership at the time of publication.
+[Richmond's Restored Mansion Reopens: History Meets Modern Heritage Tourism](/richmond-mansion-reopens-heritage-tourism-2026)
+:** This article covers hospitality industry developments and event announcements as of June 2026. Event dates and details are subject to change. Travelers should visit official JdV by Hyatt property websites or contact venues directly for current event information, RSVP requirements, and any venue-specific regulations. Partnership details reflect public statements from brand leadership at the time of publication.

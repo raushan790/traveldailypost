@@ -91,10 +91,9 @@ Keep your airline confirmation readily available, monitor your email and phone f
 
 ## Related Travel Guides
 
-[Newark Airport Flight Delays Hit 12% as Summer Travel Surge Begins](/newark-airport-delays-summer-2026)
+[China Becomes Global Tourism Powerhouse Alongside US, France, Spain](/china-global-tourism-powerhouse-2026)
 
-[Northeast Regional Airlines: Your Guide to Avoiding Cancellations](/northeast-regional-airlines-guide-avoid-cancellations)
+[Philippines Adopts Visa Garmin Pay: Wearable Payments Transform Tourism](/philippines-garmin-pay-wearable-payments-tourism-2026)
 
-[Teterboro vs. Newark: Which NYC Metro Airport Should You Actually Use](/teterboro-vs-newark-airport-guide)
-
-**Disclaimer:** This article reports on flight operations and cancellations based on publicly available airline data as of June 5, 2026. Passenger rights regarding cancellations vary by airline and ticket type. Consult your airline's specific rebooking and refund policies, and review your rights under the U.S. Department of Transportation regulations for domestic flight cancellations.
+[Virgin Australia's Massive Route Overhaul: 10 Cities Transformed by June 2026](/virgin-australia-massive-route-expansion-10-cities-june-2026)
+:** This article reports on flight operations and cancellations based on publicly available airline data as of June 5, 2026. Passenger rights regarding cancellations vary by airline and ticket type. Consult your airline's specific rebooking and refund policies, and review your rights under the U.S. Department of Transportation regulations for domestic flight cancellations.

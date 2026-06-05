@@ -92,10 +92,9 @@ As of publication, disruptions remain active. Travelers should monitor condition
 
 ## Related Travel Guides
 
-[Air Canada's Passenger Rights: What Compensation Are You Owed?](/air-canada-passenger-compensation-rights-canadian-law)
+[Cape Town Cracks Top 5 Global Cultural Cities—Africa's Creative Powerhouse](/cape-town-top-five-cultural-cities-2026)
 
-[WestJet Flight Delays: Your Legal Remedies Under Canadian Air Law](/westjet-flight-cancellation-compensation-2026)
+[Alaska Airlines-Korean Air Codeshare: Seattle's Gateway to Asia Unlocked](/alaska-korean-air-codeshare-seattle-asia)
 
-[How to File a Flight Disruption Claim: A Nomad Lawyer's Guide](/flight-disruption-claim-canada-compensation-process)
-
-**Disclaimer:** This article covers operational flight disruptions as reported by affected airports and airlines as of **June 5, 2026**. Disruption data reflects real-time FlightAware tracking and official airline statements. Readers should verify current flight status directly with airlines before travel. This publication does not constitute legal advice regarding passenger compensation claims—consult Transport Canada's Passenger Bill of Rights or a travel law attorney for eligibility determinations.
+[Indonesia Tourism Surge: Foreign Visitors Drive Record Growth](/indonesia-tourism-boom-international-visitors-record-growth)
+:** This article covers operational flight disruptions as reported by affected airports and airlines as of **June 5, 2026**. Disruption data reflects real-time FlightAware tracking and official airline statements. Readers should verify current flight status directly with airlines before travel. This publication does not constitute legal advice regarding passenger compensation claims—consult Transport Canada's Passenger Bill of Rights or a travel law attorney for eligibility determinations.

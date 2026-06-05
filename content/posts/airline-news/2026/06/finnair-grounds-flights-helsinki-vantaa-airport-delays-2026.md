@@ -104,10 +104,9 @@ Passengers rarely see this coming. Your 8 AM Helsinki flight delay seems isolate
 
 ## Related Travel Guides
 
-[UK Government Proposes Nationwide Flight Bans for Disruptive Passengers: New Database System to Enhance Aviation Safety and Tourism Growth](/uk-flight-bans-disruptive-passengers-2026-06-04)
+[Portugal Strike June 2026: Travel Chaos Across Flights, Metro, Rail](/portugal-general-strike-june-2026-travel-chaos)
 
-[SpaceX IPO Set to Reshape Commercial Space Travel Investment Landscape](/spacex-ipo-75-billion-nasdaq-debut-space-travel-investment)
+[Russia Flight Chaos: UTair, Yakutia Ground 6 Flights](/russia-utair-yakutia-airlines-flight-cancellations-june-2026)
 
-[Understanding Your EU Passenger Rights: Flight Delays, Cancellations, and Compensation Claims](/eu-passenger-rights-flight-compensation-2026)
-
-**Disclaimer:** This article covers operational disruptions at Helsinki-Vantaa Airport on June 4, 2026, and general passenger rights under EU Regulation 261/2004. Compensation eligibility depends on specific circumstances—weather, security threats, and extraordinary events typically exempt airlines from liability. Always verify current airline policies and contact your airline directly for personalized guidance. Information sourced from FlightAware and official EU transport regulations; subject to real-time updates and operational changes.
+[Sydney and Perth Flight Cancellations: 21+ Flights Grounded Across Australia](/sydney-perth-airport-flight-cancellations-june-2026)
+:** This article covers operational disruptions at Helsinki-Vantaa Airport on June 4, 2026, and general passenger rights under EU Regulation 261/2004. Compensation eligibility depends on specific circumstances—weather, security threats, and extraordinary events typically exempt airlines from liability. Always verify current airline policies and contact your airline directly for personalized guidance. Information sourced from FlightAware and official EU transport regulations; subject to real-time updates and operational changes.

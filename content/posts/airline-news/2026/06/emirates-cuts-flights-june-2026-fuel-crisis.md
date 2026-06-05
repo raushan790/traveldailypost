@@ -107,10 +107,9 @@ This isn't the aviation recovery everyone hoped for. It's the recovery we're act
 
 ## Related Travel Guides
 
-[American Airlines Pauses 6 Routes as Jet Fuel Costs Spike in 2026](/american-airlines-summer-route-pauses-jet-fuel-2026)
+[US Travel Advisory Mexico: Crime and Kidnapping Risks by State](/us-mexico-travel-advisory-crime-kidnapping-2026)
 
-[Middle East Airport Strikes Force Global Aviation Crisis](/middle-east-airport-strikes-travel-disruption-2026)
+[London Tube Strikes June 2-4: Complete Travel Disruption Guide](/london-tube-strikes-june-2-4-2026-disruption-guide)
 
-[Swiss International Air Lines Suspends Dubai Routes Amid Regional Uncertainty](/swiss-airlines-dubai-suspension-2026)
-
-**Disclaimer:** Flight schedules and fuel prices fluctuate regularly. Travelers should confirm current service availability directly with airlines and their booking platforms before making travel arrangements. Information in this article reflects conditions as of June 5, 2026, and may change based on evolving operational circumstances.
+[Japan, Costa Rica, Italy Partner with US Airlines for Experiential Tourism Boom](/japan-costa-rica-italy-us-airline-alliances-experiential-tourism)
+:** Flight schedules and fuel prices fluctuate regularly. Travelers should confirm current service availability directly with airlines and their booking platforms before making travel arrangements. Information in this article reflects conditions as of June 5, 2026, and may change based on evolving operational circumstances.

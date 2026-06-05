@@ -78,10 +78,9 @@ Thailand isn't chasing visitor records anymore. It's chasing value, sustainabili
 
 ## Related Travel Guides
 
-[Barbados Tourism Welcomes New Luxury Era as Turtle Beach Resort Opens on South Coast](/barbados-turtle-beach-resort-luxury-tourism-opening)
+[Philippines Adopts Visa Garmin Pay: Wearable Payments Transform Tourism](/philippines-garmin-pay-wearable-payments-tourism-2026)
 
-[Belgium's Ghent Leads Europe's Emerging Coolcation Trend With Modern Restaurant Culture](/ghent-belgium-coolcation-trend-emerging-travel)
+[Oman Air Cancels 4 Flights at Seeb: Middle East Aviation Chaos Spreads](/oman-air-seeb-airport-cancellations-june-2026)
 
-[Nepal's Gandaki Province Unveils Hidden Gems Beyond Traditional Mountain Trails](/gandaki-nepal-hidden-gems-trekking-tourism)
-
-**Disclaimer:** This article reflects tourism data and government policy announcements as of June 2026. Visa policies and entry requirements are subject to change. Travelers should consult the [Tourism Authority of Thailand](https://www.tourismthailand.org/) or their nearest Thai embassy for current entry requirements before planning travel.
+[Copenhagen Airport Chaos: 6 Flights Suspended, Delays Ripple Across Europe and Beyond](/copenhagen-airport-6-flights-suspended-sas-cityjet-norwegian-june-2026)
+:** This article reflects tourism data and government policy announcements as of June 2026. Visa policies and entry requirements are subject to change. Travelers should consult the [Tourism Authority of Thailand](https://www.tourismthailand.org/) or their nearest Thai embassy for current entry requirements before planning travel.

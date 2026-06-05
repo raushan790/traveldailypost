@@ -80,10 +80,9 @@ The **$80 million Tourism Icons Investment Fund** effectively signals that Queen
 
 ## Related Travel Guides
 
-[Australia's Top 5 Coastal Destinations Beyond the Great Barrier Reef](/australia-coastal-destinations-2026)
+[World Cup Aircraft Liveries: Plane Spotting Paradise in 2026](/world-cup-aircraft-liveries-2026-plane-spotting)
 
-[Sustainable Tourism in Asia-Pacific: How Destinations Are Protecting Natural Assets](/sustainable-tourism-asia-pacific-2026)
+[MSC Cruises Hits Net-Zero Target Five Years Early](/msc-cruises-net-zero-target-2050-sustainability)
 
-[Cairns Travel Guide: Beyond the Reef—Hidden Adventures in Tropical North Queensland](/cairns-travel-guide-adventures-2026)
-
-**Disclaimer:** This article reflects the Queensland government's strategic tourism framework and announced investment allocations as of June 2026. Project timelines, funding distribution schedules, and competitive application processes may be subject to change. Prospective tourism operators should consult official government tourism development websites and contact Queensland Tourism Industry Development for current eligibility requirements and application details.
+[Middle East Airspace Crisis: Why Your Flight Got Canceled](/middle-east-airspace-flight-cancellations-2026)
+:** This article reflects the Queensland government's strategic tourism framework and announced investment allocations as of June 2026. Project timelines, funding distribution schedules, and competitive application processes may be subject to change. Prospective tourism operators should consult official government tourism development websites and contact Queensland Tourism Industry Development for current eligibility requirements and application details.

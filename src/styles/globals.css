@@ -2314,6 +2314,7 @@ h1, h2, h3, h4, h5, h6 {
    STICKY SOCIAL ICONS
    ===================================================== */
 #sticky-social-icons-container {
+  display: none; /* hidden for now */
   position: fixed;
   right: 20px;
   top: 50%;

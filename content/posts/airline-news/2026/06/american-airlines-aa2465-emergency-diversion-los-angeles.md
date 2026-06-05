@@ -85,10 +85,9 @@ Until **American Airlines** issues an official statement explaining the diversio
 
 ## Related Travel Guides
 
-[Southwest Airlines Emergency Landings: June 2026 Operational Disruptions](/southwest-airlines-emergency-landings-june-2026)
+[IndiGo Suspends Six Southeast Asian Routes Through September](/indigo-suspends-six-routes-hong-kong-southeast-asia)
 
-[Your Rights When Flights Divert: DOT Passenger Protection Rules](/passenger-rights-flight-diversion-dot-regulations)
+[UK Government Proposes Nationwide Flight Bans for Disruptive Passengers: New Database System to Enhance Aviation Safety and Tourism Growth](/uk-flight-bans-disruptive-passengers-2026-06-04)
 
-[American Airlines Charlotte Hub: Hub Disruptions and Connecting Flight Delays](/american-airlines-charlotte-hub-disruptions)
-
-**Disclaimer:** This article reports factual aviation incidents and operational events. Flight diversions are normal aviation procedures executed when crew members determine continuing to the destination is not advisable. The absence of an official cause statement does not indicate negligence or mechanical failure. Passengers seeking compensation should consult the DOT's official guidance on flight disruption claims.
+[JetBlue A321 Dodges Training Aircraft in Fort Lauderdale Near-Miss](/jetblue-a321-near-miss-fort-lauderdale-training-aircraft)
+:** This article reports factual aviation incidents and operational events. Flight diversions are normal aviation procedures executed when crew members determine continuing to the destination is not advisable. The absence of an official cause statement does not indicate negligence or mechanical failure. Passengers seeking compensation should consult the DOT's official guidance on flight disruption claims.

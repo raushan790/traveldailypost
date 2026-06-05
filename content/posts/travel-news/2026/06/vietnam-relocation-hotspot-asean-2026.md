@@ -136,10 +136,9 @@ The data from ISEAS research, combined with 2025-2026 arrival statistics and Vie
 
 ## Related Travel Guides
 
-[Why Thailand's Visa Changes Are Reshaping Digital Nomad Migration in 2026](/thailand-visa-changes-digital-nomad-2026)
+[Alaska Airlines-Korean Air Codeshare: Seattle's Gateway to Asia Unlocked](/alaska-korean-air-codeshare-seattle-asia)
 
-[Singapore's New Housing Tax: How It Affects Long-Term Expat Relocation](/singapore-housing-tax-expat-2026)
+[Portugal Strike June 2026: Travel Chaos Across Flights, Metro, Rail](/portugal-general-strike-june-2026-travel-chaos)
 
-[Malaysia's Talent Visa Program: A Legal Analysis for Remote Workers](/malaysia-talent-visa-program-remote-workers-law)
-
-**Disclaimer:** This article provides travel and relocation information based on publicly available data as of June 2026. Visa policies, living costs, and travel regulations change frequently. Verify current requirements with official **Vietnamese embassy** or **consulate websites** before planning relocation or extended stays. This content is for informational purposes and should not be construed as legal or financial advice. Consult immigration attorneys and relocation specialists for personalized guidance.
+[Middle East Flight Crisis: 45 Cancellations, 100+ Delays Strand Thousands](/middle-east-flight-cancellations-june-2026)
+:** This article provides travel and relocation information based on publicly available data as of June 2026. Visa policies, living costs, and travel regulations change frequently. Verify current requirements with official **Vietnamese embassy** or **consulate websites** before planning relocation or extended stays. This content is for informational purposes and should not be construed as legal or financial advice. Consult immigration attorneys and relocation specialists for personalized guidance.

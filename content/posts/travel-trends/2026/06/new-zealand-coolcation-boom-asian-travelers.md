@@ -94,10 +94,9 @@ It's becoming a lifestyle choice.
 
 ## Related Travel Guides
 
-[Vietnam Shifts Summer Holiday Plans Towards Hidden Beach, Mountain, and Cultural Destinations](/vietnam-summer-2026-hidden-destinations-travelers-shift)
+[Sydney and Perth Flight Cancellations: 21+ Flights Grounded Across Australia](/sydney-perth-airport-flight-cancellations-june-2026)
 
-[K-Pop Travel Fever Drives Record Foreign Hotel Demand in Busan Ahead of BTS Concert Series](/busan-kpop-tourism-surge-2026)
+[United Flight UA2124 Diverts: Chicago Hub Returns Expose Network Chaos](/united-airlines-ua2124-diversion-chicago-delays)
 
-[United States to Navigate Rising Cruise Travel Insurance Demand as 2026 Sailings Accelerate](/cruise-travel-insurance-demand-2026-rising)
-
-**Disclaimer:** This article discusses general tourism trends and destination information. For visa requirements, immigration regulations, and travel planning specific to New Zealand, consult official government sources including Immigration New Zealand or your country's relevant travel authority. Climate and seasonal information is subject to annual variation.
+[Frontier Airlines Dominates Budget Rankings After Spirit's Exit](/frontier-airlines-dominates-cheapest-airlines-spirit-shutdown-2026)
+:** This article discusses general tourism trends and destination information. For visa requirements, immigration regulations, and travel planning specific to New Zealand, consult official government sources including Immigration New Zealand or your country's relevant travel authority. Climate and seasonal information is subject to annual variation.
