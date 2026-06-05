@@ -159,14 +159,15 @@ CRITICAL: Return ONLY the final raw prompt string. Do not wrap it in quotes, do 
   }
 
 
-  console.log('\n🎨 Generating cover image with Together AI (stabilityai/stable-diffusion-3-medium)...');
+  console.log('\n🎨 Generating cover image with Together AI (openai/gpt-image-1.5)...');
   let fileBuffer;
   try {
     const response = await together.images.generate({
-      model: 'stabilityai/stable-diffusion-3-medium',
+      model: 'openai/gpt-image-1.5',
       prompt: promptText,
       n: 1,
-      size: '1536x1024'
+      size: '1536x1024',
+      quality: 'low'
     });
 
     if (response.data && response.data[0] && response.data[0].b64_json) {
