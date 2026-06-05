@@ -9,12 +9,12 @@ def get_target_tabs():
     tell application "Google Chrome" to activate
     delay 0.5
     tell application "Google Chrome"
-        set winCount to count of windows
+        set allWindowIds to id of every window
     end tell
     
-    repeat with i from 1 to winCount
+    repeat with wId in allWindowIds
         tell application "Google Chrome"
-            set index of window i to 1
+            set index of window id wId to 1
         end tell
         delay 0.5
         
@@ -37,8 +37,8 @@ def get_target_tabs():
         
         if isActiveProfile then
             tell application "Google Chrome"
-                set wId to id of window 1
-                repeat with t in tabs of window 1
+                set w to window id wId
+                repeat with t in tabs of w
                     if URL of t contains "travelandtourworld.com/news/article/" then
                         set tId to id of t
                         set output to output & wId & "," & tId & "," & URL of t & "\\n"
@@ -51,11 +51,15 @@ def get_target_tabs():
     """
     result = subprocess.run(["osascript", "-e", script], capture_output=True, text=True)
     tabs = []
+    seen_urls = set()
     for line in result.stdout.strip().split("\n"):
         if line.strip():
             parts = line.split(",", 2)
             if len(parts) >= 3:
-                tabs.append((parts[0], parts[1], parts[2]))
+                url = parts[2]
+                if url not in seen_urls:
+                    seen_urls.add(url)
+                    tabs.append((parts[0], parts[1], url))
     return tabs
 
 def read_tab(win_id, tab_id):

@@ -276,6 +276,8 @@ BLOG TONE & STYLE RULES:
 - Preserve ALL factual data, statistics, names, dates, and figures exactly
 - Embed 2-3 outbound links to authoritative sources naturally in the body
 - End with a short punchy italic sign-off line
+- **Viral Temperament & Layout**: Start with a high-impact dramatic hook or a brief first-person story-style opening. Structure sections with intriguing, click-worthy subheadings. Maintain a temperament of strong conviction, urgency, or awe to encourage social shares and long reader attention spans. Avoid passive, dry, corporate-style reporting.
+
 
 OUTPUT FORMAT — output ONLY valid markdown with YAML frontmatter. Start directly with ---
 
