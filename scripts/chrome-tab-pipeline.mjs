@@ -318,7 +318,8 @@ PROHIBITIONS:
 - No invented facts or statistics
 - No "delve into", "in conclusion", "all in all"
 - No code blocks or triple backticks
-- Do NOT link back to the source URL: ${url}`;
+- Do NOT link back to the source URL: ${url}
+- CRITICAL: Under "## Related Travel Guides", you MUST copy the EXACT markdown links provided above — do NOT invent, change, or add any links. Use them exactly as-is, word for word.`;
 
   let lastError;
   for (let attempt = 1; attempt <= 3; attempt++) {
@@ -352,7 +353,7 @@ PROHIBITIONS:
 }
 
 // ── Step 6: Normalize and save markdown ──────────────────────────────────────
-function saveArticle(md, articleId, forcedCategory = null, forcedAuthor = null) {
+function saveArticle(md, articleId, forcedCategory = null, forcedAuthor = null, slugPool = []) {
   // Extract fields
   const titleMatch    = md.match(/title:\s*"([^"]+)"/);
   const categoryMatch = md.match(/category:\s*"([^"]+)"/);
@@ -396,6 +397,29 @@ function saveArticle(md, articleId, forcedCategory = null, forcedAuthor = null) 
 
   // Ensure ID is correct
   md = md.replace(/id:\s*\d+/, `id: ${articleId}`);
+
+  // ── Post-processing: Fix any broken Related Travel Guide links ─────────────
+  // Claude sometimes ignores the provided links and invents non-existent slugs.
+  // We detect and replace them with real slugs from the pool before writing to disk.
+  if (slugPool.length > 0) {
+    const validSlugs = new Set(slugPool.map(p => p.slug));
+    const sectionMatch = md.match(/(## Related Travel Guides\s*\n)([\s\S]*?)(\n\n\*\*Disclaimer|\n\*[^\n]|$)/);
+    if (sectionMatch) {
+      const sectionBody = sectionMatch[2];
+      const links = [...sectionBody.matchAll(/\[([^\]]+)\]\((\/[^)]+)\)/g)];
+      const hasBroken = links.some(m => !validSlugs.has(m[2].slice(1)));
+      if (hasBroken) {
+        console.log('   🔧 Detected hallucinated links in Related Travel Guides — auto-fixing...');
+        const candidates = slugPool.filter(p => p.slug !== slug);
+        const picks = candidates.sort(() => Math.random() - 0.5).slice(0, 3);
+        const newLinks = picks.map(p => `[${p.title}](/${p.slug})`).join('\n\n');
+        md = md.slice(0, sectionMatch.index) +
+          sectionMatch[1] + newLinks + '\n' +
+          md.slice(sectionMatch.index + sectionMatch[0].length - sectionMatch[3].length);
+        console.log(`   ✅ Replaced with ${picks.length} valid links.`);
+      }
+    }
+  }
 
   // Write file
   const outDir = path.join(BASE_OUT_DIR, category, YEAR, MONTH);
@@ -603,7 +627,7 @@ async function main() {
 
       // Save
       console.log('   ↳ Saving markdown...');
-      const { filePath, slug, category, title } = saveArticle(md, nextId, sourceCategory, author);
+      const { filePath, slug, category, title } = saveArticle(md, nextId, sourceCategory, author, slugPool);
       console.log(`   ✅ Saved: content/posts/${category}/${YEAR}/${MONTH}/${slug}.md`);
       console.log(`   📄 Title: ${title}`);
 
