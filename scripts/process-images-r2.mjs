@@ -10,16 +10,32 @@ const ROOT = path.resolve(__dirname, '..');
 // ── Configuration ────────────────────────────────────────────────────────────
 const PENDING_IMAGES_FILE = '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/scratch/pending_image_generations.json';
 
-// Array of generated PNG file paths from Antigravity tool
 const GENERATED_PNGS = [
-  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/oman_air_seeb_airport_1780602226817.png',
-  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/oslo_airport_cancellations_1780602240073.png',
-  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/middle_east_flight_crisis_1780602251952.png',
-  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/bogota_airport_chaos_1780602289193.png',
-  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/mexico_airport_meltdown_1780602303220.png',
-  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/skywest_uturn_flight_1780602315922.png',
-  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/malpensa_airport_delays_1780602367536.png',
-  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/world_cup_liveries_1780602381220.png'
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/emirates_recycled_plastic_1780626219124.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/jetblue_near_miss_1780626234981.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/sydney_perth_cancellations_1780626250458.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/albany_airport_upgrade_1780626343023.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/delta_wifi_monetization_1780626356606.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/virgin_australia_routes_1780626369007.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/alaska_korean_air_1780626509367.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/southwest_wn1305_1780626523377.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/american_airlines_routes_1780626537013.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/asia_flight_delays_1780626654597.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/canada_flight_crisis_1780626669724.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/teterboro_cancellations_1780626682726.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/aa2465_emergency_1780626782077.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/sfo_airport_chaos_1780626796844.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/nantucket_airport_1780626814466.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/united_montrose_diversion_1780627844641.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/experiential_tourism_alliance_1780627875961.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/air_tanzania_moscow_1780629834391.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/uae_aviation_disruption_1780629834391.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/emirates_cuts_flights_1780629834391.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/frontier_cheapest_airlines_1780629834391.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/russia_flight_chaos_1780629834391.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/msp_airport_chaos_1780629834391.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/united_chicago_diversion_1780629834391.png',
+  '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/indigo_suspended_routes_1780629834391.png'
 ];
 
 // ── Load Env ─────────────────────────────────────────────────────────────────

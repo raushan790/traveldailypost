@@ -62,7 +62,7 @@ function loadArticlesFromFiles(): Article[] {
 }
 
 // Load articles from markdown files at runtime
-const articles: Article[] = loadArticlesFromFiles()
+export const articles: Article[] = loadArticlesFromFiles()
 
 export * from './constants'
 
