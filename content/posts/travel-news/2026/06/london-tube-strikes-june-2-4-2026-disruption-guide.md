@@ -12,7 +12,7 @@ slug: "london-tube-strikes-june-2-4-2026-disruption-guide"
 category: "travel-news"
 author: "Kunal K Choudhary"
 readTime: "5 min read"
-featured: true
+featured: false
 metaTitle: "London Tube Strikes June 2-4 2026: Complete Travel Guide & Alternatives"
 metaDescription: "TfL confirms Tube strikes June 2 & 4, 2026. Circle, Piccadilly lines closed. Heathrow airport access blocked. Full guide to alternatives and travel tips."
 keywords: "London Tube strikes, TfL disruption, June 2026, Underground strikes, Heathrow access, travel alert"

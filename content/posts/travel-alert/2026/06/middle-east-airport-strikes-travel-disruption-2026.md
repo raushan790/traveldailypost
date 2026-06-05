@@ -12,7 +12,7 @@ slug: "middle-east-airport-strikes-travel-disruption-2026"
 category: "travel-alert"
 author: "Kunal K Choudhary"
 readTime: "6 min read"
-featured: true
+featured: false
 metaTitle: "Middle East Airport Strikes Trigger Global Aviation Crisis | Nomad Lawyer"
 metaDescription: "Kuwait International Airport struck in renewed conflict. Airspace closures across Gulf states strand hundreds of thousands. Latest travel alerts and rerouting strategies for nomads."
 keywords: "Middle East airport strikes, Kuwait International Airport, airspace closures, flight cancellations, Gulf aviation crisis, travel disruption 2026"

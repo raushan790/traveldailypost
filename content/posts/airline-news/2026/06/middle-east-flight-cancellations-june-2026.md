@@ -12,7 +12,7 @@ slug: "middle-east-flight-cancellations-june-2026"
 category: "airline-news"
 author: "Preeti Gunjan"
 readTime: "6 min read"
-featured: true
+featured: false
 metaTitle: "Middle East Airline Crisis: 45 Flights Cancelled, 100+ Delayed June 5"
 metaDescription: "Gulf Air, Emirates, FlyDubai suspend 45 flights across 7 Middle East airports. Know your passenger rights, rebooking options, and what to do if stranded."
 keywords: "flight cancellations, Middle East airlines, Emirates, FlyDubai, passenger rights, flight delays, travel disruption"

@@ -12,7 +12,7 @@ slug: "middle-east-airspace-crisis-8-countries-close-skies"
 category: "travel-alert"
 author: "Raushan Kumar"
 readTime: "6 min read"
-featured: true
+featured: false
 metaTitle: "Middle East Airspace Crisis: 8 Countries Close Skies, Stranding Thousands"
 metaDescription: "Kuwait, Bahrain, Iran, Iraq, Israel and others close airspace. Airlines face cancellations, reroutes. Affects travelers from US, UK, Canada, India, Japan and more."
 keywords: "middle east airspace closure, kuwait airspace closed, bahrain flight ban, iran airspace, iraq no-fly zone, israel flight restrictions, travel disruptions 2026, flight cancellations"
