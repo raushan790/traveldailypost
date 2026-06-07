@@ -462,7 +462,7 @@ async function main() {
 
   // 1. Get all Chrome tab URLs
   console.log('📋 Step 1: Listing open Chrome tabs...');
-  const allUrls = getChromeTabUrls();
+  const allUrls = [...new Set(getChromeTabUrls())];
   console.log(`   Found ${allUrls.length} total tabs`);
 
   // 2. Filter to article URLs only
