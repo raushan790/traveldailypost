@@ -24,23 +24,23 @@ import path from 'path';
 import { execSync } from 'child_process';
 import { fileURLToPath } from 'url';
 import Anthropic from '@anthropic-ai/sdk';
-
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 const ROOT = path.resolve(__dirname, '..');
 
 // ── Config ───────────────────────────────────────────────────────────────────
-const SEEN_FILE    = path.join(__dirname, 'seen-chrome-urls.json');
+const SEEN_FILE = path.join(__dirname, 'seen-chrome-urls.json');
 const BASE_OUT_DIR = path.join(ROOT, 'content', 'posts');
-const TODAY        = new Date().toISOString().split('T')[0];
-const YEAR         = TODAY.slice(0, 4);
-const MONTH        = TODAY.slice(5, 7);
+const TODAY = new Date().toISOString().split('T')[0];
+const YEAR = TODAY.slice(0, 4);
+const MONTH = TODAY.slice(5, 7);
 
 // Parse CLI flags
-const args       = process.argv.slice(2);
-const DRY_RUN    = args.includes('--dry-run');
-const NO_IMAGES  = args.includes('--no-images');
-const limitArg   = args.find(a => a.startsWith('--limit='));
-const MAX_TABS   = limitArg ? parseInt(limitArg.split('=')[1], 10) : Infinity;
+const args = process.argv.slice(2);
+const DRY_RUN = args.includes('--dry-run');
+const NO_IMAGES = args.includes('--no-images');
+const limitArg = args.find(a => a.startsWith('--limit='));
+const MAX_TABS = limitArg ? parseInt(limitArg.split('=')[1], 10) : Infinity;
 
 // Pages to SKIP (not articles)
 const SKIP_URL_PATTERNS = [
@@ -73,7 +73,7 @@ for (const envFile of ['.env.local', '.env']) {
       // Remove inline comments
       const commentIdx = trimmed.indexOf('#');
       const cleanLine = commentIdx >= 0 ? trimmed.slice(0, commentIdx).trim() : trimmed;
-      
+
       if (cleanLine) {
         const eq = cleanLine.indexOf('=');
         if (eq > 0) {
@@ -86,7 +86,7 @@ for (const envFile of ['.env.local', '.env']) {
   }
 }
 
-const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+
 
 // ── Seen URL helpers ──────────────────────────────────────────────────────────
 function loadSeen() {
@@ -120,7 +120,7 @@ function getChromeTabUrls() {
             try
               if value of attribute "AXMenuItemMarkChar" of m is not missing value then
                 set profileName to name of m
-                if profileName is "RAM EKWAL" or profileName is "Ram Ekwal" then
+                if profileName contains "raushan7902025" or profileName contains "Ram Ekwal" then
                   set isActiveProfile to true
                 end if
                 exit repeat
@@ -234,7 +234,7 @@ function extractSourceCategory(rawText) {
       .replace(/\s+/g, '-')
       .replace(/-+/g, '-')
       .trim();
-    
+
     if (slug === 'mice') return 'travel-news';
     if (slug === 'association-news') return 'travel-news';
     if (slug === 'event-news') return 'travel-news';
@@ -359,9 +359,9 @@ PROHIBITIONS:
 // ── Step 6: Normalize and save markdown ──────────────────────────────────────
 function saveArticle(md, articleId, forcedCategory = null, forcedAuthor = null, slugPool = []) {
   // Extract fields
-  const titleMatch    = md.match(/title:\s*"([^"]+)"/);
+  const titleMatch = md.match(/title:\s*"([^"]+)"/);
   const categoryMatch = md.match(/category:\s*"([^"]+)"/);
-  const slugMatch     = md.match(/slug:\s*"([^"]+)"/);
+  const slugMatch = md.match(/slug:\s*"([^"]+)"/);
 
   if (!titleMatch || !categoryMatch) {
     throw new Error('Missing title or category in generated markdown');
@@ -571,7 +571,7 @@ async function main() {
               end tell
               return output
             '`).toString().trim().split(',');
-            
+
             if (tabsInfo.length === 2) {
               const [wId, tId] = tabsInfo;
               execSync('pbcopy < /dev/null');
