@@ -120,7 +120,7 @@ function getChromeTabUrls() {
             try
               if value of attribute "AXMenuItemMarkChar" of m is not missing value then
                 set profileName to name of m
-                if profileName contains "raushan7902025" or profileName contains "Ram Ekwal" then
+                if profileName contains "raushan7902025" or profileName contains "Ram Ekwal" or profileName contains "Raushan" then
                   set isActiveProfile to true
                 end if
                 exit repeat

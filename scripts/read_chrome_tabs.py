@@ -25,7 +25,7 @@ def get_target_tabs():
                     try
                         if value of attribute "AXMenuItemMarkChar" of m is not missing value then
                             set profileName to name of m
-                            if profileName is "RAM EKWAL" or profileName is "Ram Ekwal" then
+                            if profileName is "RAM EKWAL" or profileName is "Ram Ekwal" or profileName is "Raushan" then
                                 set isActiveProfile to true
                             end if
                             exit repeat
