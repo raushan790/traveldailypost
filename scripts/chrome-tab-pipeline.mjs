@@ -97,57 +97,31 @@ function saveSeen(seen) {
   fs.writeFileSync(SEEN_FILE, JSON.stringify([...seen], null, 2) + '\n');
 }
 
-// ── Step 1: Get all Chrome tab URLs via AppleScript (Targeted Profile) ────────
+// ── Step 1: Get all Chrome tab URLs via AppleScript ───────────────────────────
 function getChromeTabUrls() {
   const script = `
-    set output to ""
-    tell application "Google Chrome" to activate
-    delay 0.5
+    set allUrls to {}
     tell application "Google Chrome"
-      set winCount to count of windows
+      repeat with w in windows
+        repeat with t in tabs of w
+          set end of allUrls to URL of t
+        end repeat
+      end repeat
     end tell
-    
-    repeat with i from 1 to winCount
-      tell application "Google Chrome"
-        set index of window i to 1
-      end tell
-      delay 0.5
-      
-      set isActiveProfile to false
-      tell application "System Events"
-        tell process "Google Chrome"
-          repeat with m in menu items of menu 1 of menu bar item "Profiles" of menu bar 1
-            try
-              if value of attribute "AXMenuItemMarkChar" of m is not missing value then
-                set profileName to name of m
-                if profileName contains "raushan7902025" or profileName contains "Ram Ekwal" or profileName contains "Raushan" then
-                  set isActiveProfile to true
-                end if
-                exit repeat
-              end if
-            end try
-          end repeat
-        end tell
-      end tell
-      
-      if isActiveProfile then
-        tell application "Google Chrome"
-          repeat with t in tabs of window 1
-            set output to output & URL of t & "\\n"
-          end repeat
-        end tell
-      end if
+    set output to ""
+    repeat with u in allUrls
+      set output to output & u & linefeed
     end repeat
     return output
   `;
   try {
     const result = execSync(`osascript -e '${script.replace(/'/g, "'\\''")}'`, {
       encoding: 'utf8',
-      timeout: 25000,
+      timeout: 15000,
     });
     return result.trim().split('\n').filter(Boolean);
   } catch (e) {
-    console.error('❌ AppleScript failed to list Chrome tabs for profile:', e.message);
+    console.error('❌ AppleScript failed to list Chrome tabs:', e.message);
     return [];
   }
 }
