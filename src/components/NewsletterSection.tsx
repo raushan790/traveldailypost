@@ -4,14 +4,35 @@ import { useState } from 'react';
 export default function NewsletterSection() {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email && email.includes('@')) {
-      setStatus('success');
-      setEmail('');
-    } else {
+    if (!email || !email.includes('@')) {
       setStatus('error');
+      return;
+    }
+
+    setIsLoading(true);
+    try {
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setEmail('');
+      } else {
+        const data = await response.json();
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error('[Newsletter] Error:', error);
+      setStatus('error');
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -43,8 +64,8 @@ export default function NewsletterSection() {
                 aria-label="Email address for newsletter"
                 aria-describedby={status === 'error' ? 'newsletter-error' : undefined}
               />
-              <button type="submit" className="newsletter-btn">
-                Subscribe
+              <button type="submit" className="newsletter-btn" disabled={isLoading}>
+                {isLoading ? 'Subscribing...' : 'Subscribe'}
               </button>
             </form>
           )}

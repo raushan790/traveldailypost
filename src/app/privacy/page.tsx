@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Privacy Policy | Travel Daily Post',
   description: 'Learn about how Travel Daily Post protects your privacy.',
+  alternates: { canonical: 'https://traveldailypost.com/privacy' },
 };
 
 export default function PrivacyPolicy() {

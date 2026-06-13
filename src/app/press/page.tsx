@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Press Releases | Travel Daily Post',
   description: 'Latest press releases and announcements from Travel Daily Post.',
+  alternates: { canonical: 'https://traveldailypost.com/press' },
 };
 
 export default function PressReleases() {

@@ -4,10 +4,15 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Script from 'next/script';
 import { Inter, Playfair_Display, Roboto_Condensed } from 'next/font/google';
+import { getLatestArticles } from '@/lib/news-data';
+import { ThemeProvider } from 'next-themes';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-body' });
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-heading' });
 const robotoCondensed = Roboto_Condensed({ subsets: ['latin'], weight: ['400', '500', '600', '700'], variable: '--font-condensed' });
+
+// Pre-fetch breaking news titles at build time (static export)
+const breakingNewsItems = getLatestArticles(5).map((article) => article.title);
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://traveldailypost.com'),
@@ -99,21 +104,23 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
           Skip to main content
         </a>
-        <Header />
-        <main id="main-content" className="page-main">
-          {children}
-        </main>
-        <div id="sticky-social-icons-container" className="design-sharp alignment-right with-animation hide-in-mobile">
-          <ul>
-            <li className="fa-brands-fa-linkedin"><a href="https://www.linkedin.com/company/traveldailypost" target="_blank" className="fa-brands-fa-linkedin"><i className="fa-brands fa-linkedin"></i></a></li>
-            <li className="fa-brands-fa-facebook-square"><a href="https://www.facebook.com/traveldailypost" target="_blank" className="fa-brands-fa-facebook-square"><i className="fa-brands fa-facebook-square"></i></a></li>
-            <li className="fa-brands-fa-x-twitter"><a href="https://x.com/rinovative007" target="_blank" className="fa-brands-fa-x-twitter"><i className="fa-brands fa-x-twitter"></i></a></li>
-            <li className="fa-brands-fa-instagram"><a href="https://www.instagram.com/raushantheroska/" target="_blank" className="fa-brands-fa-instagram"><i className="fa-brands fa-instagram"></i></a></li>
-            <li className="fa-brands-fa-youtube"><a href="https://www.youtube.com/@traveldailypost" target="_blank" className="fa-brands-fa-youtube"><i className="fa-brands fa-youtube"></i></a></li>
-            <li className="fa-solid-fa-envelope"><a href="mailto:your-email@example.com" target="_blank" className="fa-solid-fa-envelope"><i className="fa-solid fa-envelope"></i></a></li>
-          </ul>
-        </div>
-        <Footer />
+        <ThemeProvider attribute="class" defaultTheme="light">
+          <Header breakingNewsItems={breakingNewsItems} />
+          <main id="main-content" className="page-main">
+            {children}
+          </main>
+          <div id="sticky-social-icons-container" className="design-sharp alignment-right with-animation hide-in-mobile">
+            <ul>
+              <li className="fa-brands-fa-linkedin"><a href="https://www.linkedin.com/company/traveldailypost" target="_blank" className="fa-brands-fa-linkedin"><i className="fa-brands fa-linkedin"></i></a></li>
+              <li className="fa-brands-fa-facebook-square"><a href="https://www.facebook.com/traveldailypost" target="_blank" className="fa-brands-fa-facebook-square"><i className="fa-brands fa-facebook-square"></i></a></li>
+              <li className="fa-brands-fa-x-twitter"><a href="https://x.com/rinovative007" target="_blank" className="fa-brands-fa-x-twitter"><i className="fa-brands fa-x-twitter"></i></a></li>
+              <li className="fa-brands-fa-instagram"><a href="https://www.instagram.com/raushantheroska/" target="_blank" className="fa-brands-fa-instagram"><i className="fa-brands fa-instagram"></i></a></li>
+              <li className="fa-brands-fa-youtube"><a href="https://www.youtube.com/@traveldailypost" target="_blank" className="fa-brands-fa-youtube"><i className="fa-brands fa-youtube"></i></a></li>
+              <li className="fa-solid-fa-envelope"><a href="mailto:your-email@example.com" target="_blank" className="fa-solid-fa-envelope"><i className="fa-solid fa-envelope"></i></a></li>
+            </ul>
+          </div>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

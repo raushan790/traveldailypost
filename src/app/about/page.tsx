@@ -5,6 +5,7 @@ import Image from 'next/image';
 export const metadata: Metadata = {
   title: 'About Us | Travel Daily Post',
   description: 'Learn about Travel Daily Post — your trusted global travel news source covering airlines, tourism, hotels, destinations, and more.',
+  alternates: { canonical: 'https://traveldailypost.com/about' },
 };
 
 const team = [

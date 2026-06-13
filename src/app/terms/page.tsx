@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Terms of Use | Travel Daily Post',
   description: 'Review the terms and conditions for using Travel Daily Post.',
+  alternates: { canonical: 'https://traveldailypost.com/terms' },
 };
 
 export default function TermsOfUse() {
