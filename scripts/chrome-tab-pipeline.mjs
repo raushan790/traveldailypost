@@ -138,14 +138,36 @@ async function fetchContent(url) {
   });
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const html = await res.text();
+
+  // Try to extract category from meta section or JSON-LD breadcrumbs
+  let sourceCategory = '';
+  const metaMatch = html.match(/<meta property="article:section" content="([^"]+)"/i);
+  if (metaMatch) {
+    sourceCategory = metaMatch[1].trim();
+  } else {
+    const ldMatch = html.match(/"@type"\s*:\s*"BreadcrumbList"[\s\S]*?"itemListElement"\s*:\s*\[([\s\S]*?)\]/i);
+    if (ldMatch) {
+      const itemsText = ldMatch[1];
+      const names = [...itemsText.matchAll(/"name"\s*:\s*"([^"]+)"/gi)];
+      if (names.length >= 2) {
+        sourceCategory = names[1][1].trim();
+      }
+    }
+  }
+
   // Strip HTML tags for a readable plain text version
-  return html
+  const plainText = html
     .replace(/<script[\s\S]*?<\/script>/gi, '')
     .replace(/<style[\s\S]*?<\/style>/gi, '')
     .replace(/<[^>]+>/g, ' ')
     .replace(/\s{2,}/g, ' ')
     .trim()
     .slice(0, 12000);
+
+  if (sourceCategory) {
+    return `SOURCE_CATEGORY: ${sourceCategory}\n${plainText}`;
+  }
+  return plainText;
 }
 
 // ── Step 3: Collect slug pool for Related Travel Guides footer ────────────────
@@ -199,9 +221,18 @@ function getNextPostId() {
 }
 
 function extractSourceCategory(rawText) {
-  const match = rawText.match(/Home\s*(?:»|>>|&raquo;)\s*([^»>]+?)\s*(?:»|>>|&raquo;)/i);
-  if (match) {
-    const rawCat = match[1].trim();
+  let rawCat = null;
+  const prefixMatch = rawText.match(/^SOURCE_CATEGORY:\s*([^\r\n]+)/);
+  if (prefixMatch) {
+    rawCat = prefixMatch[1].trim();
+  } else {
+    const match = rawText.match(/Home\s*(?:»|>>|&raquo;)\s*([^»>]+?)\s*(?:»|>>|&raquo;)/i);
+    if (match) {
+      rawCat = match[1].trim();
+    }
+  }
+
+  if (rawCat) {
     const slug = rawCat
       .toLowerCase()
       .replace(/[^a-z0-9\s-]/g, '')
@@ -216,7 +247,7 @@ function extractSourceCategory(rawText) {
     if (slug === 'technology-news') return 'technology-news';
 
     // Map regional and subcategories to the primary valid categories
-    if (slug.includes('airline')) return 'airline-news';
+    if (slug.includes('airline') || slug.includes('airport') || slug.includes('aircraft') || slug.includes('manufacturer') || slug.includes('pilot')) return 'airline-news';
     if (slug.includes('hotel')) return 'hotel-news';
     if (slug.includes('cruise')) return 'cruise-news';
     if (slug.includes('railway') || slug.includes('train')) return 'railway-news';
@@ -225,7 +256,7 @@ function extractSourceCategory(rawText) {
     if (slug.includes('travel-tips')) return 'travel-news';
     if (slug.includes('travel-deals')) return 'travel-deals';
     if (slug.includes('travel-trends')) return 'travel-trends';
-    if (slug.includes('travel-alert')) return 'travel-alerts';
+    if (slug.includes('travel-alert') || slug.includes('travel-alerts')) return 'travel-alerts';
     if (slug.includes('destination')) return 'destination-news';
 
     return slug;
