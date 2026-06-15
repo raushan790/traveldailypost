@@ -3,7 +3,6 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Advertise With Us | Travel Daily Post',
   description: 'Reach millions of travel enthusiasts. Learn about advertising opportunities with Travel Daily Post.',
-  alternates: { canonical: 'https://traveldailypost.com/advertise' },
 };
 
 export default function Advertise() {

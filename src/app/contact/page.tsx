@@ -1,5 +1,6 @@
 'use client';
 
+import { Metadata } from 'next';
 import { useState } from 'react';
 
 export default function Contact() {

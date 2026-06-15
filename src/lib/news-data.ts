@@ -39,7 +39,6 @@ function loadArticlesFromFiles(): Article[] {
             image: data.coverImage || '/images/placeholder.jpg',
             author: data.author || 'Staff Writer',
             date: data.date || new Date().toISOString().split('T')[0],
-            updatedDate: data.updatedDate || undefined,
             readTime: data.readTime || '5 min read',
             featured: data.featured || false,
             tags: Array.isArray(data.tags) ? data.tags : [],

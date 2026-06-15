@@ -1,10 +1,25 @@
 'use client';
 
+import { useState, useEffect } from 'react';
+
 interface BreakingNewsTickerProps {
   items: string[];
 }
 
-export default function BreakingNewsTicker({ items }: BreakingNewsTickerProps) {
+export default function BreakingNewsTicker({ items: fallbackItems }: BreakingNewsTickerProps) {
+  const [items, setItems] = useState<string[]>(fallbackItems || []);
+
+  useEffect(() => {
+    fetch('/api/articles')
+      .then(res => res.json())
+      .then(data => {
+        if (data && Array.isArray(data) && data.length > 0) {
+          setItems(data.slice(0, 5).map((a: any) => a.title));
+        }
+      })
+      .catch(console.error);
+  }, []);
+
   const displayItems = items.length > 0 ? items : ['Loading latest news...'];
   const doubled = [...displayItems, ...displayItems];
 

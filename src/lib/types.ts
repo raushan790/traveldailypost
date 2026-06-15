@@ -9,7 +9,6 @@ export interface Article {
   image: string;
   author: string;
   date: string;
-  updatedDate?: string;
   readTime: string;
   featured: boolean;
   tags: string[];

@@ -5,25 +5,15 @@ import Link from 'next/link';
 import { categories, breakingNews } from '@/lib/constants';
 import BreakingNewsTicker from './BreakingNewsTicker';
 import SearchModal from './SearchModal';
-import { useTheme } from 'next-themes';
 
-interface HeaderProps {
-  breakingNewsItems?: string[];
-}
-
-export default function Header({ breakingNewsItems }: HeaderProps) {
+export default function Header() {
   const [mounted, setMounted] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
   }, []);
-
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-  };
 
   const today = mounted ? new Date().toLocaleDateString('en-US', {
     weekday: 'long',
@@ -82,31 +72,6 @@ export default function Header({ breakingNewsItems }: HeaderProps) {
                 <path d="m21 21-4.35-4.35"/>
               </svg>
             </button>
-            {mounted && (
-              <button
-                className="theme-toggle"
-                aria-label="Toggle dark mode"
-                onClick={toggleTheme}
-              >
-                {theme === 'dark' ? (
-                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="5"/>
-                    <line x1="12" y1="1" x2="12" y2="3"/>
-                    <line x1="12" y1="21" x2="12" y2="23"/>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-                    <line x1="1" y1="12" x2="3" y2="12"/>
-                    <line x1="21" y1="12" x2="23" y2="12"/>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-                  </svg>
-                ) : (
-                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-                  </svg>
-                )}
-              </button>
-            )}
             <button 
               className="hamburger-btn" 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} 
@@ -157,7 +122,7 @@ export default function Header({ breakingNewsItems }: HeaderProps) {
       </nav>
 
       {/* Breaking News */}
-      <BreakingNewsTicker items={breakingNewsItems || breakingNews} />
+      <BreakingNewsTicker items={breakingNews} />
 
       {/* Search Modal */}
       <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />

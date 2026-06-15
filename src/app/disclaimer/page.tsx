@@ -3,7 +3,6 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Disclaimer | Travel Daily Post',
   description: 'Important disclaimer regarding Travel Daily Post content.',
-  alternates: { canonical: 'https://traveldailypost.com/disclaimer' },
 };
 
 export default function Disclaimer() {

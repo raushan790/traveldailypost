@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * chrome-blog-master.mjs
- *
+ * 
  * Unified Automation Pipeline:
  * 1. Targets a specific Chrome Profile.
  * 2. Scrapes content from open tabs via clipboard.

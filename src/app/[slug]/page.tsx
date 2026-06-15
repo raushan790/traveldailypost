@@ -80,9 +80,7 @@ export default async function ArticlePage({ params }: Props) {
     description: article.excerpt,
     image: [article.image],
     datePublished: new Date(article.date).toISOString(),
-    dateModified: article.updatedDate
-      ? new Date(article.updatedDate).toISOString()
-      : new Date(article.date).toISOString(),
+    dateModified: new Date(article.date).toISOString(),
     author: {
       '@type': 'Person',
       name: article.author,
@@ -107,23 +105,8 @@ export default async function ArticlePage({ params }: Props) {
   const shareUrl = encodeURIComponent(`https://traveldailypost.com/${article.slug}`);
   const shareTitle = encodeURIComponent(article.title);
 
-  const breadcrumbJsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://traveldailypost.com' },
-      { '@type': 'ListItem', position: 2, name: article.categoryName, item: `https://traveldailypost.com/category/${article.category}` },
-      { '@type': 'ListItem', position: 3, name: article.title, item: `https://traveldailypost.com/${article.slug}` },
-    ],
-  };
-
   return (
     <>
-      {/* JSON-LD BreadcrumbList Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
-      />
       {/* JSON-LD NewsArticle Schema */}
       <script
         type="application/ld+json"
