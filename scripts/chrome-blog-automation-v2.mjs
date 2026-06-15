@@ -176,7 +176,7 @@ function scrapeTabViaClipboard(windowId, tabId) {
           set active tab index of window id ${windowId} to targetIdx
         end if
       end try
-      delay 0.5
+      delay 1.0
     end tell
     tell application "System Events"
       set frontmost of process "Google Chrome" to true
@@ -184,12 +184,13 @@ function scrapeTabViaClipboard(windowId, tabId) {
       keystroke "a" using command down
       delay 0.5
       keystroke "c" using command down
-      delay 0.8
+      delay 1.0
     end tell
   `;
   try {
     execSync(`osascript -e '${script.replace(/'/g, "'\\''")}'`, { timeout: 15000 });
-    return execSync('pbpaste', { encoding: 'utf8' }).trim();
+    const content = execSync('pbpaste', { encoding: 'utf8' }).trim();
+    return content;
   } catch (e) {
     console.error('❌ Clipboard failure:', e.message);
     return '';
@@ -265,13 +266,16 @@ featured: false
 async function rewriteArticle(rawText, articleId) {
   const systemPrompt = buildRewritePrompt(articleId);
   const response = await openai.chat.completions.create({
-    model: 'llama3', // Using a common local model name; change if using different local model
+    model: 'gemma4:31b-cloud',
     messages: [
       { role: 'system', content: systemPrompt },
-      { role: 'user', content: `Source Blog Content:\n\n${rawText.slice(0, 15000)}` }
+      { role: 'user', content: `Source Blog Content:\n\n${rawText}` }
     ],
     temperature: 0.3,
     max_tokens: 4096,
+    options: {
+      num_ctx: 32768
+    },
   });
   return response.choices[0].message.content.trim();
 }
@@ -301,7 +305,9 @@ async function main() {
     }
 
     try {
+      console.log(`   ⏳ Rewriting with LLM (this may take 1-2 minutes)...`);
       let md = await rewriteArticle(rawText, nextId);
+      console.log(`   ✨ Rewrite complete!`);
       if (md.startsWith('```markdown')) md = md.replace(/^```markdown/, '').replace(/```$/, '').trim();
       else if (md.startsWith('```')) md = md.replace(/^```/, '').replace(/```$/, '').trim();
 
