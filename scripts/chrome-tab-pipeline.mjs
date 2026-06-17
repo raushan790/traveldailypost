@@ -244,7 +244,7 @@ function extractSourceCategory(rawText) {
     if (slug === 'association-news') return 'travel-news';
     if (slug === 'event-news') return 'travel-news';
     if (slug === 'destinations') return 'destination-news';
-    if (slug === 'technology-news') return 'technology-news';
+    if (slug.includes('technology') || slug.includes('tech')) return 'technology-news';
 
     // Map regional and subcategories to the primary valid categories
     if (slug.includes('airline') || slug.includes('airport') || slug.includes('aircraft') || slug.includes('manufacturer') || slug.includes('pilot')) return 'airline-news';
@@ -681,7 +681,7 @@ async function main() {
 
   // Save pending images to disk
   if (pendingImageGenerations.length > 0) {
-    const scratchDir = '/Users/raushankumar/.gemini/antigravity-ide/brain/4c7770fb-1443-468b-a091-23ddd50b6b60/scratch';
+    const scratchDir = path.join(ROOT, 'scratch');
     const pendingImagesFile = path.join(scratchDir, 'pending_image_generations.json');
     if (!fs.existsSync(scratchDir)) {
       fs.mkdirSync(scratchDir, { recursive: true });
