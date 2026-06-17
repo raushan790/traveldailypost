@@ -54,7 +54,8 @@ const SKIP_URL_PATTERNS = [
   'perplexity.ai', 'genspark.ai', 'chatgpt.com',
   'antigravity.google', 'teamviewer.com', 'hauspire.com', 'labs.google',
   'microsoft.com', 'linkpublishers.com', 'paypal.com', 'lmstudio.ai',
-  'traveldailypost.com', 'together.ai', 'openart.ai'
+  'traveldailypost.com', 'together.ai', 'openart.ai', 'makemytrip.com',
+  'goibibo.com', 'icicibank.com', 'icici.bank.in'
 ];
 
 // Valid blog categories
