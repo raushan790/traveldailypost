@@ -1,5 +1,5 @@
 ---
-id: 8012
+id: 401
 title: "Navy Retires F-5 Tigers for Super Hornets in Aggressor Squadrons"
 date: "2026-06-21"
 updatedDate: "2026-06-21"

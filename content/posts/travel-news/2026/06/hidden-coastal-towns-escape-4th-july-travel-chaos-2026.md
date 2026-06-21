@@ -1,5 +1,5 @@
 ---
-id: 8007
+id: 396
 title: "10 Hidden Coastal Towns Beat 4th of July 2026 Crowds"
 date: "2026-06-19"
 updatedDate: "2026-06-19"

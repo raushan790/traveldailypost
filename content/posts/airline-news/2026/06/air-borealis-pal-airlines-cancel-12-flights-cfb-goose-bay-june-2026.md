@@ -1,5 +1,5 @@
 ---
-id: 8001
+id: 390
 title: "Air Borealis, PAL Airlines Cancel 12 Flights at CFB Goose Bay"
 date: "2026-06-19"
 updatedDate: "2026-06-19"

@@ -1,5 +1,5 @@
 ---
-id: 8017
+id: 406
 title: "Why Emirates' A380 Dominates Long-Haul Flying in 2026"
 date: "2026-06-21"
 updatedDate: "2026-06-21"

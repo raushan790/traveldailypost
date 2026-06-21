@@ -1,5 +1,5 @@
 ---
-id: 8016
+id: 405
 title: "Southwest Atlanta Massacre: 26 Routes Axed in Historic Pullback"
 date: "2026-06-21"
 updatedDate: "2026-06-21"

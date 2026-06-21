@@ -1,5 +1,5 @@
 ---
-id: 8011
+id: 400
 title: "Russia's Hypersonic Gamble: Why Early Innovation Masked a Decade-Long Fighter Gap"
 date: "2026-06-21"
 updatedDate: "2026-06-21"

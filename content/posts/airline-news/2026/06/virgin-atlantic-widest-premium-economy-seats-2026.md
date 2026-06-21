@@ -1,5 +1,5 @@
 ---
-id: 8009
+id: 398
 title: "Virgin Atlantic's 21-Inch Premium Economy Seats Rule 2026"
 date: "2026-06-21"
 updatedDate: "2026-06-21"

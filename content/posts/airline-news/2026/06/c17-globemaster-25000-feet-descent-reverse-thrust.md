@@ -1,5 +1,5 @@
 ---
-id: 8019
+id: 408
 title: "C-17 Globemaster's 25,000-Foot Freefall: How Military Cargo Jets Cheat Death"
 date: "2026-06-21"
 updatedDate: "2026-06-21"

@@ -1,5 +1,5 @@
 ---
-id: 8022
+id: 411
 title: "Southwest Airlines Loses Monopoly Shield: 60% Route Advantage Crumbling in 2026"
 date: "2026-06-21"
 updatedDate: "2026-06-21"

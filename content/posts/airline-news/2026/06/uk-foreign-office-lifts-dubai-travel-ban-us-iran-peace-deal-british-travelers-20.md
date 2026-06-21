@@ -1,5 +1,5 @@
 ---
-id: 8006
+id: 395
 title: "FCDO Lifts Dubai Ban: British Travelers Can Book Again After Iran Peace Deal"
 date: "2026-06-19"
 updatedDate: "2026-06-19"

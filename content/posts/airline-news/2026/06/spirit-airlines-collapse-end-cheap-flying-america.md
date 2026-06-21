@@ -1,5 +1,5 @@
 ---
-id: 8020
+id: 409
 title: "Spirit Airlines' Collapse Signals End of Cheap Flights in America"
 date: "2026-06-21"
 updatedDate: "2026-06-21"

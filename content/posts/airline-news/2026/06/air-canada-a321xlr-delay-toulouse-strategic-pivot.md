@@ -1,5 +1,5 @@
 ---
-id: 8010
+id: 399
 title: "Air Canada's A321XLR Rethink: Why Two-Year Delays Force Strategic Route Overhaul"
 date: "2026-06-21"
 updatedDate: "2026-06-21"

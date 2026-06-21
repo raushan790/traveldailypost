@@ -1,5 +1,5 @@
 ---
-id: 8018
+id: 407
 title: "Fighter Jet Retirement: Where Do Combat Aircraft Really Go?"
 date: "2026-06-21"
 updatedDate: "2026-06-21"

@@ -1,5 +1,5 @@
 ---
-id: 8003
+id: 392
 title: "CDG Airport Meltdown: 11 Flights Canceled, 300+ Delays Paralyze Paris"
 date: "2026-06-19"
 updatedDate: "2026-06-19"

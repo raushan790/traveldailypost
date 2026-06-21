@@ -1,5 +1,5 @@
 ---
-id: 8008
+id: 397
 title: "5 Unique A380 Capabilities No Other Aircraft Can Match Today"
 date: "2026-06-21"
 updatedDate: "2026-06-21"

@@ -1,5 +1,5 @@
 ---
-id: 8002
+id: 391
 title: "5 Flights Cancelled at Bogotá Hub: Avianca, LATAM Chaos"
 date: "2026-06-19"
 updatedDate: "2026-06-19"
