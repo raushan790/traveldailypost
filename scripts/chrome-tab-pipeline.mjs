@@ -55,7 +55,7 @@ const SKIP_URL_PATTERNS = [
   'antigravity.google', 'teamviewer.com', 'hauspire.com', 'labs.google',
   'microsoft.com', 'linkpublishers.com', 'paypal.com', 'lmstudio.ai',
   'traveldailypost.com', 'together.ai', 'openart.ai', 'makemytrip.com',
-  'goibibo.com', 'icicibank.com', 'icici.bank.in'
+  'goibibo.com', 'icicibank.com', 'icici.bank.in', 'fal.ai'
 ];
 
 // Valid blog categories
@@ -221,7 +221,10 @@ function getNextPostId() {
   return maxId + 1;
 }
 
-function extractSourceCategory(rawText) {
+function extractSourceCategory(rawText, url) {
+  if (url && url.includes('simpleflying.com')) {
+    return 'airline-news';
+  }
   let rawCat = null;
   const prefixMatch = rawText.match(/^SOURCE_CATEGORY:\s*([^\r\n]+)/);
   if (prefixMatch) {
@@ -620,7 +623,7 @@ async function main() {
       }
 
       // Extract category from source if available
-      const sourceCategory = extractSourceCategory(rawText);
+      const sourceCategory = extractSourceCategory(rawText, url);
       if (sourceCategory && VALID_CATEGORIES.includes(sourceCategory)) {
         console.log(`   📂 Detected source category: ${sourceCategory}`);
       }

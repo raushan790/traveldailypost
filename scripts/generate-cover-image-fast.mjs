@@ -167,11 +167,11 @@ CRITICAL: Return ONLY the final raw prompt string. Do not wrap it in quotes, do 
   }
 
 
-  console.log('\n🎨 Generating cover image with Together AI (google/imagen-4.0-fast)...');
+  console.log('\n🎨 Generating cover image with Together AI (black-forest-labs/FLUX.1-schnell)...');
   let fileBuffer;
   try {
     const response = await together.images.generate({
-      model: "google/imagen-4.0-fast",
+      model: "black-forest-labs/FLUX.1-schnell",
       prompt: promptText,
       n: 1,
       size: '1024x768'

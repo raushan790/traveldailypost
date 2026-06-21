@@ -39,9 +39,10 @@ def get_target_tabs():
             tell application "Google Chrome"
                 set w to window id wId
                 repeat with t in tabs of w
-                    if URL of t contains "travelandtourworld.com/news/article/" then
+                    set theUrl to URL of t
+                    if theUrl contains "travelandtourworld.com/news/article/" or theUrl contains "simpleflying.com/" then
                         set tId to id of t
-                        set output to output & wId & "," & tId & "," & URL of t & "\\n"
+                        set output to output & wId & "," & tId & "," & theUrl & "\\n"
                     end if
                 end repeat
             end tell
@@ -112,7 +113,7 @@ try:
 except Exception:
     existing_data = []
 
-existing_urls = {item["url"] for item in existing_data if "TTW" in item.get("text", "")}
+existing_urls = {item["url"] for item in existing_data if len(item.get("text", "")) > 400}
 
 data = existing_data.copy()
 
@@ -124,14 +125,14 @@ for w, t, url in tabs:
     print(f"Reading {url}")
     text = read_tab(w, t)
     
-    if "TTW" in text or "travelandtourworld" in text.lower():
+    if len(text.strip()) > 400:
         print(" -> Success")
         data.append({"url": url, "text": text})
     else:
         print(" -> Failed to capture correct text. Retrying...")
         time.sleep(1)
         text = read_tab(w, t)
-        if "TTW" in text or "travelandtourworld" in text.lower():
+        if len(text.strip()) > 400:
              print(" -> Success on retry")
         else:
              print(" -> Still failed")
