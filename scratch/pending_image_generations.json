@@ -1,10 +1,208 @@
 [
   {
-    "articlePath": "/Users/raushankumar/Working/raushan/traveldailypost/content/posts/tourism-news/2026/06/dubai-pocket-forest-sustainable-tourism-revolution.md",
-    "title": "Dubai's Pocket Forest Revolution: How a Tiny Desert Oasis Is Redefining Sustainable Tourism",
-    "excerpt": "Expo City Dubai's Terra pocket forest is transforming urban tourism with a thriving micro-ecosystem using native UAE species and cutting-edge monitoring technology.",
-    "slug": "dubai-pocket-forest-sustainable-tourism-revolution",
+    "articlePath": "/Users/raushankumar/Working/raushan/traveldailypost/content/posts/tourism-news/2026/06/italy-alter-ego-ai-robot-medical-tourism-milan.md",
+    "title": "Italy's AI Robot Transforms Medical Tourism Forever in Milan",
+    "excerpt": "Italy's Maugeri Hospital tests Alter-Ego AI robot, signaling a revolutionary shift in medical tourism. Smart hospitals are redefining patient care for international travelers seeking seamless digital healthcare experiences worldwide.",
+    "slug": "italy-alter-ego-ai-robot-medical-tourism-milan",
     "category": "tourism-news",
+    "year": "2026",
+    "month": "06"
+  },
+  {
+    "articlePath": "/Users/raushankumar/Working/raushan/traveldailypost/content/posts/travel-news/2026/06/andros-island-neoclassical-ai-innovation-greek-tourism.md",
+    "title": "Andros Island Merges Ancient Mansions With AI Tech to Reshape Greek Tourism",
+    "excerpt": "How Andros Island in the Cyclades is redefining Greek tourism by blending neoclassical heritage with cutting-edge AI technology for visitors seeking authentic cultural experiences.",
+    "slug": "andros-island-neoclassical-ai-innovation-greek-tourism",
+    "category": "travel-news",
+    "year": "2026",
+    "month": "06"
+  },
+  {
+    "articlePath": "/Users/raushankumar/Working/raushan/traveldailypost/content/posts/tourism-news/2026/06/xoli-ai-mexico-city-travel-assistant-2026.md",
+    "title": "Xoli AI Guide: Mexico City's Game-Changing Travel Assistant for 2026",
+    "excerpt": "Mexico City launches Xoli, a groundbreaking AI chatbot on WhatsApp designed to guide millions of World Cup 2026 visitors through culture, transit, dining, and stadium logistics with instant personalized itineraries.",
+    "slug": "xoli-ai-mexico-city-travel-assistant-2026",
+    "category": "tourism-news",
+    "year": "2026",
+    "month": "06"
+  },
+  {
+    "articlePath": "/Users/raushankumar/Working/raushan/traveldailypost/content/posts/airline-news/2026/06/southwest-airlines-aws-ai-2028-aviation-revolution.md",
+    "title": "Southwest Airlines' 2028 AI Revolution: How AWS Cloud Is Reshaping Aviation",
+    "excerpt": "Southwest Airlines is embarking on a massive cloud migration to AWS paired with AI integration that will fundamentally transform airline operations, passenger experiences, and industry standards by 2028.",
+    "slug": "southwest-airlines-aws-ai-2028-aviation-revolution",
+    "category": "airline-news",
+    "year": "2026",
+    "month": "06"
+  },
+  {
+    "articlePath": "/Users/raushankumar/Working/raushan/traveldailypost/content/posts/technology-news/2026/06/aseer-digital-map-summer-2026-saudi-arabia.md",
+    "title": "Aseer's Game-Changing Digital Map Transforms Saudi Summer 2026 Travel",
+    "excerpt": "Aseer Region launches revolutionary interactive digital map for Summer 2026 season, targeting 3 million visitors with 100+ events in Saudi Arabia's stunning highlands.",
+    "slug": "aseer-digital-map-summer-2026-saudi-arabia",
+    "category": "technology-news",
+    "year": "2026",
+    "month": "06"
+  },
+  {
+    "articlePath": "/Users/raushankumar/Working/raushan/traveldailypost/content/posts/tourism-news/2026/06/vietnam-digital-tourism-transformation-record-arrivals-2026.md",
+    "title": "Vietnam's Digital Tourism Boom: 10.6M Visitors, Green Growth Strategy",
+    "excerpt": "Vietnam welcomes record 10.6M international arrivals in first five months of 2026, accelerating digital transformation and green growth to hit 25M annual target.",
+    "slug": "vietnam-digital-tourism-transformation-record-arrivals-2026",
+    "category": "tourism-news",
+    "year": "2026",
+    "month": "06"
+  },
+  {
+    "articlePath": "/Users/raushankumar/Working/raushan/traveldailypost/content/posts/technology-news/2026/06/kenya-digital-parks-platform-wildlife-tourism-revolution.md",
+    "title": "Kenya's Digital Safari Revolution: How Tech Is Reshaping Wildlife Tourism",
+    "excerpt": "Kenya launches unified parks information platform integrating 40+ national parks, conservancies, and marine ecosystems—transforming how travelers plan safari expeditions and supporting conservation-led tourism growth across East Africa.",
+    "slug": "kenya-digital-parks-platform-wildlife-tourism-revolution",
+    "category": "technology-news",
+    "year": "2026",
+    "month": "06"
+  },
+  {
+    "articlePath": "/Users/raushankumar/Working/raushan/traveldailypost/content/posts/travel-news/2026/06/eu-border-chaos-six-hour-delays-british-holidaymakers-2026.md",
+    "title": "EU Border Chaos: Six-Hour Delays Threaten 41M Visitors This Summer",
+    "excerpt": "IATA warns British holidaymakers face historic six-hour passport queues as EU's new Entry/Exit System buckles under summer volumes. Up to 41 million arrivals at risk.",
+    "slug": "eu-border-chaos-six-hour-delays-british-holidaymakers-2026",
+    "category": "travel-news",
+    "year": "2026",
+    "month": "06"
+  },
+  {
+    "articlePath": "/Users/raushankumar/Working/raushan/traveldailypost/content/posts/technology-news/2026/06/uk-travel-tech-ai-surge-mobile-app-decline-2026.md",
+    "title": "UK Travel Tech Shift: AI Surges as Mobile Apps Collapse in 2026",
+    "excerpt": "UK travel tech industry pivots dramatically toward AI investment while mobile app adoption plummets 76% year-over-year. AI booking assistants now dominate as operators reshape digital travel ecosystems.",
+    "slug": "uk-travel-tech-ai-surge-mobile-app-decline-2026",
+    "category": "technology-news",
+    "year": "2026",
+    "month": "06"
+  },
+  {
+    "articlePath": "/Users/raushankumar/Working/raushan/traveldailypost/content/posts/technology-news/2026/06/west-coast-border-chaos-ees-digital-collapse.md",
+    "title": "West Coast Border Chaos: EES Digital Meltdown Hits Five Major Hubs",
+    "excerpt": "Vancouver, Seattle, Portland, San Francisco, and Los Angeles face unprecedented transpacific delays as EES-style biometric systems collapse under peak summer travel. Here's what travelers must know.",
+    "slug": "west-coast-border-chaos-ees-digital-collapse",
+    "category": "technology-news",
+    "year": "2026",
+    "month": "06"
+  },
+  {
+    "articlePath": "/Users/raushankumar/Working/raushan/traveldailypost/content/posts/hotel-news/2026/06/bwh-hotels-luxury-sales-division-bleisure-corporate-travel.md",
+    "title": "BWH Hotels Launches Premium Sales Division, Targets Bleisure Boom",
+    "excerpt": "BWH Hotels consolidates upscale and luxury brands into a global sales division, capitalizing on surging bleisure travel and corporate demand for premium hospitality experiences.",
+    "slug": "bwh-hotels-luxury-sales-division-bleisure-corporate-travel",
+    "category": "hotel-news",
+    "year": "2026",
+    "month": "06"
+  },
+  {
+    "articlePath": "/Users/raushankumar/Working/raushan/traveldailypost/content/posts/travel-news/2026/06/four-seasons-osaka-food-beverage-director-appointment.md",
+    "title": "Four Seasons Osaka Elevates Dining with Food & Beverage Leader",
+    "excerpt": "Four Seasons Hotel Osaka appoints Oscar Abril Bonthuis as Director of Food and Beverage, signaling a major shift in Japan's luxury hospitality culinary standards and global dining innovation.",
+    "slug": "four-seasons-osaka-food-beverage-director-appointment",
+    "category": "travel-news",
+    "year": "2026",
+    "month": "06"
+  },
+  {
+    "articlePath": "/Users/raushankumar/Working/raushan/traveldailypost/content/posts/travel-news/2026/06/four-seasons-bora-bora-chef-mickael-messina-appointment.md",
+    "title": "Four Seasons Bora Bora Appoints Michelin-Caliber Chef Messina",
+    "excerpt": "Four Seasons Resort Bora Bora elevates its Michelin Key status by appointing Executive Chef Mickael Messina, a 25-year culinary veteran, to oversee four restaurants and premium dining operations.",
+    "slug": "four-seasons-bora-bora-chef-mickael-messina-appointment",
+    "category": "travel-news",
+    "year": "2026",
+    "month": "06"
+  },
+  {
+    "articlePath": "/Users/raushankumar/Working/raushan/traveldailypost/content/posts/hotel-news/2026/06/ihg-hotel-indigo-stockholm-kvarnholmen-2029.md",
+    "title": "IHG's Game-Changing Hotel Indigo Debuts in Stockholm by 2029",
+    "excerpt": "IHG Hotels & Resorts makes a bold Nordic move with Hotel Indigo Stockholm – Kvarnholmen, a 232-room lifestyle property launching in 2029 on Stockholm's transforming waterfront district.",
+    "slug": "ihg-hotel-indigo-stockholm-kvarnholmen-2029",
+    "category": "hotel-news",
+    "year": "2026",
+    "month": "06"
+  },
+  {
+    "articlePath": "/Users/raushankumar/Working/raushan/traveldailypost/content/posts/hotel-news/2026/06/accor-new-crafts-awards-fashion-hospitality-partnership.md",
+    "title": "Accor Launches New Crafts Awards: Fashion Meets Hospitality",
+    "excerpt": "Accor and FHCM debut groundbreaking New Crafts Awards, merging fashion design with luxury hospitality through Swissôtel. Winners gain design collaborations, financial support, and global hotel access.",
+    "slug": "accor-new-crafts-awards-fashion-hospitality-partnership",
+    "category": "hotel-news",
+    "year": "2026",
+    "month": "06"
+  },
+  {
+    "articlePath": "/Users/raushankumar/Working/raushan/traveldailypost/content/posts/tourism-news/2026/06/montreux-jazz-festival-60th-anniversary-woodward-vip-experience.md",
+    "title": "Montreux Jazz Festival 60th Anniversary: Luxury Lake Geneva VIP Experience",
+    "excerpt": "The Woodward unveils an exclusive VIP hospitality programme for Montreux Jazz Festival's landmark 60th anniversary, blending luxury accommodation with premium festival access on Lake Geneva shores.",
+    "slug": "montreux-jazz-festival-60th-anniversary-woodward-vip-experience",
+    "category": "tourism-news",
+    "year": "2026",
+    "month": "06"
+  },
+  {
+    "articlePath": "/Users/raushankumar/Working/raushan/traveldailypost/content/posts/destination-news/2026/06/hanoi-metro-expansion-reshapes-2026-travel.md",
+    "title": "Hanoi's Five Metro Lines Transform 2026 Travel Experience",
+    "excerpt": "Hanoi's massive metro expansion across five major lines is reshaping daily commutes and transforming how millions navigate the capital in 2026.",
+    "slug": "hanoi-metro-expansion-reshapes-2026-travel",
+    "category": "destination-news",
+    "year": "2026",
+    "month": "06"
+  },
+  {
+    "articlePath": "/Users/raushankumar/Working/raushan/traveldailypost/content/posts/travel-news/2026/06/thailand-chiang-mai-crackdown-foreign-businesses-digital-nomads.md",
+    "title": "Thailand Tightens Chiang Mai: Digital Nomad Crackdown Reshapes Tourism",
+    "excerpt": "Thailand launches surprise enforcement wave in Chiang Mai targeting foreign-owned hotels, businesses, and digital nomad operations. What travelers and investors need to know now.",
+    "slug": "thailand-chiang-mai-crackdown-foreign-businesses-digital-nomads",
+    "category": "travel-news",
+    "year": "2026",
+    "month": "06"
+  },
+  {
+    "articlePath": "/Users/raushankumar/Working/raushan/traveldailypost/content/posts/tourism-news/2026/06/turkey-medical-tourism-overtakes-global-destinations-2026.md",
+    "title": "Türkiye Crushes Medical Tourism Rankings, Overtakes Thailand, Mexico, India",
+    "excerpt": "Türkiye emerges as the world's fastest-growing medical tourism destination, surpassing Thailand, Mexico, India, South Korea and Malaysia with affordable luxury healthcare, cosmetic surgery and specialist treatments in 2026.",
+    "slug": "turkey-medical-tourism-overtakes-global-destinations-2026",
+    "category": "tourism-news",
+    "year": "2026",
+    "month": "06"
+  },
+  {
+    "articlePath": "/Users/raushankumar/Working/raushan/traveldailypost/content/posts/destination-news/2026/06/alula-manara-astrotourism-dark-sky-observatory-saudi-arabia.md",
+    "title": "AlUla's Game-Changing Dark Sky Observatory Redefines Desert Tourism",
+    "excerpt": "Saudi Arabia's AlUla Manara astrotourism centre is launching near AlUla with advanced telescope infrastructure and luxury stargazing lodges, positioning the desert as a global astronomy destination competing with international dark-sky regions.",
+    "slug": "alula-manara-astrotourism-dark-sky-observatory-saudi-arabia",
+    "category": "destination-news",
+    "year": "2026",
+    "month": "06"
+  },
+  {
+    "articlePath": "/Users/raushankumar/Working/raushan/traveldailypost/content/posts/travel-news/2026/06/therme-singapore-asia-wellness-megacity-marina-south.md",
+    "title": "Singapore's Mega Wellness City: Therme's 720K Sq Ft Asia Game-Changer",
+    "excerpt": "Therme Group breaks ground on Asia's first fully integrated wellness megacity at Marina South. 720,000 sq ft of immersive health, leisure, and social infrastructure launching 2030.",
+    "slug": "therme-singapore-asia-wellness-megacity-marina-south",
+    "category": "travel-news",
+    "year": "2026",
+    "month": "06"
+  },
+  {
+    "articlePath": "/Users/raushankumar/Working/raushan/traveldailypost/content/posts/destination-news/2026/06/troo-cave-village-heatwave-escape-loire-valley.md",
+    "title": "France's Underground Cave Village Becomes Europe's Heatwave Escape",
+    "excerpt": "As brutal European heatwaves intensify, Troo's ancient cave dwellings in France's Loire Valley are drawing tourists seeking natural cooling. This hidden cliffside village proves historic architecture beats air-conditioning.",
+    "slug": "troo-cave-village-heatwave-escape-loire-valley",
+    "category": "destination-news",
+    "year": "2026",
+    "month": "06"
+  },
+  {
+    "articlePath": "/Users/raushankumar/Working/raushan/traveldailypost/content/posts/travel-news/2026/06/elite-dive-travel-honduras-philippines-maldives-liveaboard-savings-2026.md",
+    "title": "Elite Dive Travel: Honduras, Philippines, Maldives Slash Liveaboard Prices in 2026",
+    "excerpt": "Aggressor Adventures launches aggressive 2026 liveaboard savings across three continents, offering up to $1,200 discounts on premium dive vacations in Roatan, Coron, Visayas and Malé.",
+    "slug": "elite-dive-travel-honduras-philippines-maldives-liveaboard-savings-2026",
+    "category": "travel-news",
     "year": "2026",
     "month": "06"
   }
