@@ -230,19 +230,28 @@ function extractSourceCategory(rawText, url) {
   if (prefixMatch) {
     rawCat = prefixMatch[1].trim();
   } else {
-    const match = rawText.match(/Home\s*(?:»|>>|&raquo;)\s*([^»>]+?)\s*(?:»|>>|&raquo;)/i);
+    // Match breadcrumbs like Home » Category or Home / Category or Home > Category
+    const match = rawText.match(/Home\s*(?:»|>>|&raquo;|\/|>|\||→)\s*([^»>/\x7c→\r\n]+?)\s*(?:»|>>|&raquo;|\/|>|\||→)/i);
     if (match) {
       rawCat = match[1].trim();
     }
   }
 
   if (rawCat) {
-    const slug = rawCat
+    let slug = rawCat
       .toLowerCase()
       .replace(/[^a-z0-9\s-]/g, '')
       .replace(/\s+/g, '-')
       .replace(/-+/g, '-')
       .trim();
+
+    // If the captured category is just "articles" or "news", let's try to look further in the text or default
+    if (slug === 'articles' || slug === 'news' || slug === 'home') {
+      const secondaryMatch = rawText.match(/Home\s*(?:»|>>|&raquo;|\/|>|\||→)\s*(?:articles|news|home)\s*(?:»|>>|&raquo;|\/|>|\||→)\s*([^»>/\x7c→\r\n]+?)\s*(?:»|>>|&raquo;|\/|>|\||→)/i);
+      if (secondaryMatch) {
+        slug = secondaryMatch[1].toLowerCase().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-').replace(/-+/g, '-').trim();
+      }
+    }
 
     if (slug === 'mice') return 'travel-news';
     if (slug === 'association-news') return 'travel-news';
@@ -252,7 +261,7 @@ function extractSourceCategory(rawText, url) {
 
     // Map regional and subcategories to the primary valid categories
     if (slug.includes('airline') || slug.includes('airport') || slug.includes('aircraft') || slug.includes('manufacturer') || slug.includes('pilot')) return 'airline-news';
-    if (slug.includes('hotel')) return 'hotel-news';
+    if (slug.includes('hotel') || slug.includes('resort') || slug.includes('stay')) return 'hotel-news';
     if (slug.includes('cruise')) return 'cruise-news';
     if (slug.includes('railway') || slug.includes('train')) return 'railway-news';
     if (slug.includes('tourism')) return 'tourism-news';
@@ -453,7 +462,7 @@ function saveArticle(md, articleId, forcedCategory = null, forcedAuthor = null, 
 // ── Step 7: Generate cover image ─────────────────────────────────────────────
 function generateImage(filePath) {
   try {
-    execSync(`node scripts/generate-cover-image-fast.mjs "${filePath}"`, {
+    execSync(`"${process.execPath}" scripts/generate-cover-image-fast.mjs "${filePath}"`, {
       stdio: 'inherit',
       cwd: ROOT,
       timeout: 300000,
