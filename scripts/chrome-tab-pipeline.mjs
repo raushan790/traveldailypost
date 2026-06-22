@@ -260,7 +260,7 @@ function extractSourceCategory(rawText, url) {
     if (slug.includes('technology') || slug.includes('tech')) return 'technology-news';
 
     // Map regional and subcategories to the primary valid categories
-    if (slug.includes('airline') || slug.includes('airport') || slug.includes('aircraft') || slug.includes('manufacturer') || slug.includes('pilot')) return 'airline-news';
+    if (slug.includes('aviation') || slug.includes('airline') || slug.includes('airport') || slug.includes('aircraft') || slug.includes('manufacturer') || slug.includes('pilot')) return 'airline-news';
     if (slug.includes('hotel') || slug.includes('resort') || slug.includes('stay')) return 'hotel-news';
     if (slug.includes('cruise')) return 'cruise-news';
     if (slug.includes('railway') || slug.includes('train')) return 'railway-news';
@@ -268,8 +268,8 @@ function extractSourceCategory(rawText, url) {
     if (slug.includes('travel-news')) return 'travel-news';
     if (slug.includes('travel-tips')) return 'travel-news';
     if (slug.includes('travel-deals')) return 'travel-deals';
-    if (slug.includes('travel-trends')) return 'travel-trends';
-    if (slug.includes('travel-alert') || slug.includes('travel-alerts')) return 'travel-alerts';
+    if (slug.includes('travel-trends') || slug.includes('research') || slug.includes('statistics')) return 'travel-trends';
+    if (slug.includes('travel-alert') || slug.includes('travel-alerts') || slug.includes('visa') || slug.includes('passport') || slug.includes('border')) return 'travel-alerts';
     if (slug.includes('destination')) return 'destination-news';
 
     return slug;
@@ -480,8 +480,18 @@ async function main() {
 
   // 1. Get all Chrome tab URLs
   console.log('📋 Step 1: Listing open Chrome tabs...');
-  const allUrls = [...new Set(getChromeTabUrls())];
-  console.log(`   Found ${allUrls.length} total tabs`);
+  const rawUrls = getChromeTabUrls();
+  const allUrls = [...new Set(rawUrls.map(url => {
+    try {
+      const parsed = new URL(url);
+      parsed.search = '';
+      parsed.hash = '';
+      return parsed.toString();
+    } catch {
+      return url;
+    }
+  }))];
+  console.log(`   Found ${allUrls.length} total tabs after normalization`);
 
   // 2. Filter to article URLs only
   const articleUrls = allUrls.filter(url => {

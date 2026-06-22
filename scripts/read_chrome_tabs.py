@@ -40,7 +40,7 @@ def get_target_tabs():
                 set w to window id wId
                 repeat with t in tabs of w
                     set theUrl to URL of t
-                    if theUrl contains "travelandtourworld.com/news/article/" or theUrl contains "simpleflying.com/" or theUrl contains "lonelyplanet.com/articles/" or theUrl contains "travelandleisure.com/" or theUrl contains "nationalgeographic.com/travel/" then
+                    if theUrl contains "travelandtourworld.com/news/article/" or theUrl contains "simpleflying.com/" or theUrl contains "lonelyplanet.com/articles/" or theUrl contains "travelandleisure.com/" or theUrl contains "nationalgeographic.com/travel/" or theUrl contains "travel.economictimes.indiatimes.com/" then
                         set tId to id of t
                         set output to output & wId & "," & tId & "," & theUrl & "\n"
                     end if
