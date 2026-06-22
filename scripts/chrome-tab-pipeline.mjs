@@ -55,7 +55,7 @@ const SKIP_URL_PATTERNS = [
   'antigravity.google', 'teamviewer.com', 'hauspire.com', 'labs.google',
   'microsoft.com', 'linkpublishers.com', 'paypal.com', 'lmstudio.ai',
   'traveldailypost.com', 'together.ai', 'openart.ai', 'makemytrip.com',
-  'goibibo.com', 'icicibank.com', 'icici.bank.in', 'fal.ai'
+  'goibibo.com', 'icicibank.com', 'icici.bank.in', 'fal.ai', 'publication.media'
 ];
 
 // Valid blog categories
