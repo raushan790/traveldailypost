@@ -7,6 +7,7 @@ import sharp from 'sharp';
 import { S3Client, PutObjectCommand } from '@aws-sdk/client-s3';
 import { Together } from 'together-ai';
 import Anthropic from '@anthropic-ai/sdk';
+import OpenAI from 'openai';
 import fetch from 'node-fetch';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -162,8 +163,68 @@ CRITICAL: Return ONLY the final raw prompt string. Do not wrap it in quotes, do 
     promptText = promptText.replace(/^["']|["']$/g, '');
     console.log(`\n✨ Generated Prompt:\n"${promptText}"\n`);
   } catch (err) {
-    console.warn(`⚠️ Failed to generate custom prompt via LLM: ${err.message}. Falling back to default prompt.`);
-    promptText = `RAW, unfiltered photojournalism. Breaking news cover photo for: "${title}". Context: ${excerpt}. Shot by a war-zone Reuters photographer embedded in the chaos. SHOW THE CHAOS — crowded airports with grounded flights and frustrated travelers, flooded streets with rising water, closed airspace with grounded planes on tarmac, or tense border checkpoints with long queues depending on the article context. People reacting with real raw emotion — stress, exhaustion, urgency, confusion. Feature real diverse travelers and locals caught in the situation: families with luggage sitting on airport floors, businessmen staring at departure boards showing CANCELLED, local women looking worried or determined, couples holding each other amid disruption. Gritty photorealistic style — motion blur on rushing crowds, harsh fluorescent airport lighting mixed with dramatic storm clouds outside, rain-streaked windows, police tape, emergency vehicles with flashing lights. Shot on Canon EOS R5 with 24-70mm f/2.8 lens, shallow depth of field with sharp subject and chaotic blurred background. High ISO grain for authenticity. Color grading: desaturated with punchy contrast, teal shadows and amber highlights. Ultra wide angle showing the full scale of the scene. NO text, NO watermarks, NO logos, NO illustrations. This must look like a real photograph that could appear on the front page of The New York Times.`;
+    console.warn(`⚠️ Failed to generate custom prompt via Claude: \${err.message}. Falling back to local Ollama...`);
+    try {
+      const openai = new OpenAI({
+        apiKey: process.env.OLLAMA_API_KEY || 'dummy-key',
+        baseURL: process.env.OLLAMA_BASE_URL || 'http://localhost:11434/v1',
+      });
+      const response = await openai.chat.completions.create({
+        model: process.env.OLLAMA_MODEL_NAME || 'gemma4:31b-cloud',
+        messages: [
+          {
+            role: 'system',
+            content: `You are an expert prompt engineer for FLUX.1-schnell image generator.
+Your job is to generate a highly detailed, photorealistic, premium image description (prompt) based on the category, title, and excerpt/context of a travel article.
+
+General Style Guidelines:
+- The output prompt MUST BE in a single paragraph, highly descriptive and detailed.
+- Always aim for a photorealistic style, cinematic quality, 4K resolution, shallow depth of field, warm and cool tones, shot on Canon EOS R5 with 24-70mm f/2.8 lens.
+- Avoid illustrations, paintings, graphics, and cartoons.
+- Do NOT include any text, watermarks, logos, or artificial borders in the scene.
+- Avoid using specific trademarked/copyrighted terms. Instead, describe them using high-quality generic equivalents (e.g. "modern commercial jet airplane", "sleek high-speed train").
+- Ensure the people, ethnicities, and architectural styles match the geographical context of the article (e.g. if the article is about Japan, specify Japanese women/men and modern Japanese/Tokyo architecture).
+- Keep descriptions natural, real, and raw.
+
+Tone & Emotion Adaptation Guidelines:
+- The facial expressions and body language of the subjects (usually one or two beautiful traveler/local women) MUST reflect the tone of the article.
+- If the article describes airline delays, airport chaos, flight cancellations, strikes, weather alerts, or negative incidents, the subjects should NOT look happy. Instead, describe them as looking visibly frustrated, checking a smartphone with a worried expression, staring up at a departure board with a disappointed sigh, or sitting tiredly on their luggage.
+- If the article is positive (luxury news, new flight routes, tourist booms, travel guides, visa-free access), the subjects should look joyful, smiling, laughing, or gazing in wonder and relaxation.
+
+Background & Vehicles Guidelines:
+- If the article talks about flight cancellations, airport disruption, or airlines in general, place the scene inside a busy modern airport terminal, near a boarding gate, or looking through large glass windows at a passenger airplane parked on the tarmac/runway in the background.
+- If it is about train travel, place them on a railway platform with a modern high-speed train. If about cruise ships, show them on a cruise ship deck.
+
+Category-specific instructions:
+1. For "travel-alert" and negative transit/airline news:
+"Three beautiful, real-looking young women — one [Ethnicity/Nationality 1] with [hair color/style 1], one [Ethnicity/Nationality 2] with [hair color/style 2], and one [Ethnicity/Nationality 3] with [hair color/style 3] — standing together inside a modern, busy [airport terminal/train station/transit location]. The setting is [Airport/Location Name], with departure boards visible in the background showing 'DELAYED' and 'CANCELLED' statuses, or a passenger airplane visible outside on a rainy tarmac. The women look stressed, tired, or worried, checking their phones or pointing to the departure board, dressed in stylish casual travel outfits."
+
+2. For positive/general "airline-news", "cruise-news", "railway-news", "travel-technology-news":
+Focus on transit hubs (airports, train stations, cruise docks) showing real, diverse, stylish travelers interacting naturally. Always hint at the transit vehicle (e.g., boarding gate with a passenger plane visible on the runway through windows, high-speed train at the platform, cruise ship deck). The mood should be active, realistic, and modern.
+
+3. For "hotel-news":
+Focus on luxury hospitality. Show a beautiful young local woman or couple relaxing in a stunning infinity pool, a high-ceilinged elegant lobby, or a luxury suite.
+
+4. For all other categories (e.g., "destination-news", "tourism-news", "travel-news", "travel-trends", "travel-tips", "travel-deals"):
+Show scenic travel lifestyle shots. Feature two beautiful, real-looking young women (or a couple) — one local and one traveler — exploring a scenic street, local market, beach, or historic landmark in the destination. Match their emotions to the story: happy/excited for booms and guides; worried or reflective if the story covers visitor declines or environmental challenges.
+
+CRITICAL: Return ONLY the final raw prompt string. Do not wrap it in quotes, do not include any introductory or concluding text, and do not explain your choice. Just return the prompt text itself.`
+          },
+          {
+            role: 'user',
+            content: "Category: " + category + "\nTitle: " + title + "\nExcerpt: " + excerpt
+          }
+        ],
+        temperature: 0.7,
+        max_tokens: 600,
+      });
+      promptText = response.choices[0].message.content.trim();
+      promptText = promptText.replace(/^["']|["']$/g, '');
+      console.log("\n✨ Generated Prompt via Ollama:\n" + promptText + "\n");
+    } catch (ollamaErr) {
+      console.warn("⚠️ Failed to generate custom prompt via Ollama: " + ollamaErr.message + ". Falling back to default prompt.");
+      promptText = "RAW, unfiltered photojournalism. Breaking news cover photo for: " + title + ". Context: " + excerpt + ". Shot by a war-zone Reuters photographer embedded in the chaos. SHOW THE CHAOS — crowded airports with grounded flights and frustrated travelers, flooded streets with rising water, closed airspace with grounded planes on tarmac, or tense border checkpoints with long queues depending on the article context. People reacting with real raw emotion — stress, exhaustion, urgency, confusion. Feature real diverse travelers and locals caught in the situation: families with luggage sitting on airport floors, businessmen staring at departure boards showing CANCELLED, local women looking worried or determined, couples holding each other amid disruption. Gritty photorealistic style — motion blur on rushing crowds, harsh fluorescent airport lighting mixed with dramatic storm clouds outside, rain-streaked windows, police tape, emergency vehicles with flashing lights. Shot on Canon EOS R5 with 24-70mm f/2.8 lens, shallow depth of field with sharp subject and chaotic blurred background. High ISO grain for authenticity. Color grading: desaturated with punchy contrast, teal shadows and amber highlights. Ultra wide angle showing the full scale of the scene. NO text, NO watermarks, NO logos, NO illustrations. This must look like a real photograph that could appear on the front page of The New York Times.";
+    }
   }
 
 
