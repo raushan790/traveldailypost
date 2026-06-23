@@ -28,8 +28,9 @@ function loadArticlesFromFiles(): Article[] {
           const { data, content } = matter(fileContent)
 
           // Convert frontmatter to Article type
+          const numericId = typeof data.id === 'number' ? data.id : parseInt(String(data.id), 10);
           const article: Article = {
-            id: data.id ? parseInt(data.id, 10) : 0,
+            id: !isNaN(numericId) ? numericId : 0,
             slug: data.slug || file.name.replace('.md', ''),
             title: data.title || 'Untitled',
             excerpt: data.excerpt || '',
@@ -55,8 +56,12 @@ function loadArticlesFromFiles(): Article[] {
 
   walkDir(contentDir)
 
-  // Sort by id (highest first)
-  articles.sort((a, b) => b.id - a.id)
+  // Sort by id desc, then by date desc as tiebreaker
+  articles.sort((a, b) => {
+    const idDiff = b.id - a.id;
+    if (idDiff !== 0) return idDiff;
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
+  })
 
   return articles
 }

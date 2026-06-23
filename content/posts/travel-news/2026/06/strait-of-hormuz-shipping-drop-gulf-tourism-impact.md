@@ -1,5 +1,5 @@
 ---
-id: ophcee533pog
+id: 586
 title: "Strait of Hormuz Crisis: Gulf Tourism and Cruises Under Threat?"
 date: "June 23, 2026"
 updatedDate: "June 23, 2026"

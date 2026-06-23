@@ -1,5 +1,5 @@
 ---
-id: "strait-of-hormuz-closure-gulf-tourism"
+id: 585
 title: "Strait of Hormuz Closed: Gulf Tourism Under Threat?"
 date: "June 23, 2026"
 updatedDate: "June 23, 2026"

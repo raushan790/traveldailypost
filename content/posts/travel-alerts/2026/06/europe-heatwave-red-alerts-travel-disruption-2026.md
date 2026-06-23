@@ -1,5 +1,5 @@
 ---
-id: hwobtd9quioj
+id: 581
 title: "Europe Heatwave Crisis: Red Alerts Hit Spain, France, Italy"
 date: "June 23, 2026"
 updatedDate: "June 23, 2026"

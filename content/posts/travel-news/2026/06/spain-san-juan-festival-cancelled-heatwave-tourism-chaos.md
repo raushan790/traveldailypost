@@ -1,5 +1,5 @@
 ---
-id: mmp7h4x3bxq5
+id: 583
 title: "Spain Cancels San Juan Festivals Amid Extreme Heatwave Chaos"
 date: "June 23, 2026"
 updatedDate: "June 23, 2026"

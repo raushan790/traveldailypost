@@ -1,5 +1,5 @@
 ---
-id: bdyjr3ol3eo0
+id: 582
 title: "West Midlands Rail Crisis: Heatwave Triggers Massive Disruptions"
 date: "June 23, 2026"
 updatedDate: "June 23, 2026"

@@ -1,5 +1,5 @@
 ---
-id: "vietnam-heatwave-travel-alert-2026"
+id: 580
 title: "Vietnam Heatwave Alert: Scorching Temps Disrupt Travel Plans"
 date: "June 23, 2026"
 updatedDate: "June 23, 2026"
